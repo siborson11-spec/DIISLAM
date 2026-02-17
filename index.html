@@ -138,7 +138,7 @@
             </div>
 
             <div class="grid">
-                <div class="card" onclick="openModal('cal')"><h3 id="m-cal">সূচী</h3></div>
+                <div class="card" onclick="openModal('cal')"><h3 id="m-cal">সময়সূচি</h3></div>
                 <div class="card" onclick="openModal('dua')"><h3 id="m-dua">দোয়া</h3></div>
                 <div class="card" onclick="openModal('tas')"><h3 id="m-tas">তাসবিহ</h3></div>
                 <div class="card" onclick="openModal('zak')"><h3 id="m-zak">জাকাত</h3></div>
@@ -263,7 +263,7 @@
             
             const text = {
                 en: { t: "Dinislam", s: "Ramadan 2026 Guide", b: "Enter", c: "Eid-ul-Fitr 2026 Countdown", m1: "Schedule", m2: "Dua", m3: "Tasbih", m4: "Zakat", m5: "Video", ud: "Day", uh: "Hr", um: "Min", us: "Sec", fl: "Waiting for Ramadan" },
-                bn: { t: "Dinislam", s: "রমজান ২০২৬ ডিজিটাল গাইড", b: "প্রবেশ করুন", c: "ঈদুল ফিতর ২০২৬ কাউন্টডাউন", m1: "সূচী", m2: "দোয়া", m3: "তাসবিহ", m4: "জাকাত", m5: "ভিডিও", ud: "দিন", uh: "ঘণ্টা", um: "মিনিট", us: "সেক", fl: "রমজানের অপেক্ষায়" }
+                bn: { t: "Dinislam", s: "রমজান ২০২৬ ডিজিটাল গাইড", b: "প্রবেশ করুন", c: "ঈদুল ফিতর ২০২৬ কাউন্টডাউন", m1: "সময়সূচী", m2: "দোয়া", m3: "তাসবিহ", m4: "জাকাত", m5: "ভিডিও", ud: "দিন", uh: "ঘণ্টা", um: "মিনিট", us: "সেক", fl: "রমজানের অপেক্ষায়" }
             }[currentLang];
 
             document.getElementById('l-title').innerText = text.t;
@@ -294,7 +294,7 @@
                 allDuas.forEach((d, i) => h += `<div class="dua-card"><strong>${i+1}. ${d.t}</strong><p class="ar">${d.a}</p><p><b>অর্থ:</b> ${d.b}</p></div>`);
                 body.innerHTML = h;
             } else if(type === 'cal') {
-                let h = `<h3>রমজান সময়সূচী ২০২৬</h3><table><tr><th>রমজান</th><th>তারিখ</th><th>সাহরী</th><th>ইফতার</th></tr>`;
+                let h = `<h3>রমজান সময়সূচী ২০২৬ (রাজশাহী)</h3><table><tr><th>রমজান</th><th>তারিখ</th><th>সাহরী</th><th>ইফতার</th></tr>`;
                 ramadanData.forEach(i => h += `<tr><td>${i.r}</td><td>${i.d}</td><td style="color:red; font-weight:bold;">${i.s}</td><td style="color:blue; font-weight:bold;">${i.i}</td></tr>`);
                 body.innerHTML = h + `</table>`;
             } else if(type === 'tas') {
