@@ -28,7 +28,6 @@
 
         .container { max-width: 1000px; margin: 0 auto; padding: 20px; }
         
-        /* Updated Hero Section with Calendar Style */
         .hero { 
             background: var(--bg-gradient); 
             color: white; 
@@ -126,7 +125,6 @@
         .modal-content { background: var(--card-bg); color: var(--text-color); width: 92%; max-width: 550px; padding: 25px; border-radius: 30px; max-height: 85vh; overflow-y: auto; position: relative; }
         .close { position: absolute; top: 15px; right: 20px; font-size: 32px; cursor: pointer; color: #94a3b8; }
 
-        /* Premium Creator Styles - English Only */
         .premium-creator {
             background: linear-gradient(145deg, var(--card-bg), var(--body-bg));
             border-radius: 30px;
@@ -183,9 +181,6 @@
             color: white;
             font-size: 0.9rem;
             backdrop-filter: blur(5px);
-        }
-        .creator-badge i {
-            color: var(--gold);
         }
         .creator-content {
             padding: 30px;
@@ -304,7 +299,6 @@
             box-shadow: 0 15px 30px rgba(24, 119, 242, 0.4);
         }
 
-        /* Rest of the styles remain the same */
         .video-grid {
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
@@ -395,11 +389,10 @@
 
         .btn { background: var(--secondary); color: white; border: none; padding: 14px; border-radius: 15px; cursor: pointer; font-weight: bold; width: 100%; margin-top: 10px; box-shadow: 0 4px 10px rgba(99, 102, 241, 0.2); }
         
-        /* Side menu moved to right */
         .side-menu-btn { 
             position: fixed; 
             bottom: 30px; 
-            right: 30px; /* Changed from left to right */
+            right: 30px;
             background: var(--accent); 
             color: white; 
             width: 55px; 
@@ -416,11 +409,10 @@
         }
         .side-menu-btn span { display: block; width: 25px; height: 3px; background: white; }
         
-        /* Side options moved to right */
         #sideOptions {
             position: fixed; 
             bottom: 95px; 
-            right: 30px; /* Changed from left to right */
+            right: 30px;
             background: white; 
             padding: 15px; 
             border-radius: 20px; 
@@ -428,6 +420,153 @@
             gap: 10px; 
             box-shadow: 0 10px 30px rgba(0,0,0,0.1); 
             z-index: 1001;
+        }
+
+        .rovex-chat-btn {
+            position: fixed;
+            bottom: 100px;
+            right: 30px;
+            background: linear-gradient(135deg, var(--accent), var(--secondary));
+            color: white;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+            z-index: 1000;
+            box-shadow: 0 5px 20px rgba(6, 182, 212, 0.5);
+            border: 2px solid white;
+            font-size: 0.7rem;
+            font-weight: bold;
+            text-align: center;
+            line-height: 1.2;
+            transition: transform 0.2s;
+        }
+        .rovex-chat-btn:hover {
+            transform: scale(1.1);
+        }
+        .rovex-chat-btn i {
+            font-size: 1.3rem;
+            margin-bottom: 2px;
+        }
+
+        .chat-window {
+            position: fixed;
+            bottom: 180px;
+            right: 30px;
+            width: 320px;
+            height: 450px;
+            background: var(--card-bg);
+            border-radius: 25px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.2);
+            display: none;
+            flex-direction: column;
+            overflow: hidden;
+            z-index: 1002;
+            border: 2px solid var(--accent);
+        }
+        .chat-header {
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            color: white;
+            padding: 15px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .chat-header h4 {
+            font-size: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+        .close-chat {
+            cursor: pointer;
+            font-size: 1.5rem;
+            background: none;
+            border: none;
+            color: white;
+        }
+        .chat-messages {
+            flex: 1;
+            padding: 15px;
+            overflow-y: auto;
+            background: var(--body-bg);
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+        .message {
+            padding: 12px;
+            border-radius: 18px;
+            max-width: 85%;
+            word-wrap: break-word;
+            font-size: 0.9rem;
+            line-height: 1.4;
+        }
+        .user-message {
+            background: var(--accent);
+            color: white;
+            align-self: flex-end;
+            border-bottom-right-radius: 5px;
+        }
+        .bot-message {
+            background: var(--card-bg);
+            color: var(--text-color);
+            align-self: flex-start;
+            border-bottom-left-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+        }
+        .chat-input-area {
+            padding: 15px;
+            background: var(--card-bg);
+            border-top: 1px solid #eee;
+            display: flex;
+            gap: 10px;
+        }
+        .chat-input-area input {
+            flex: 1;
+            padding: 12px;
+            border: 2px solid #e2e8f0;
+            border-radius: 25px;
+            outline: none;
+            background: var(--body-bg);
+            color: var(--text-color);
+        }
+        .chat-input-area input:focus {
+            border-color: var(--accent);
+        }
+        .chat-input-area button {
+            background: var(--accent);
+            color: white;
+            border: none;
+            width: 45px;
+            height: 45px;
+            border-radius: 50%;
+            cursor: pointer;
+            font-size: 1.2rem;
+        }
+        .suggested-questions {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 5px;
+            margin-top: 10px;
+        }
+        .suggested-q {
+            background: rgba(6, 182, 212, 0.1);
+            color: var(--accent);
+            padding: 8px 12px;
+            border-radius: 50px;
+            font-size: 0.75rem;
+            cursor: pointer;
+            border: 1px solid var(--accent);
+            white-space: nowrap;
+        }
+        .suggested-q:hover {
+            background: var(--accent);
+            color: white;
         }
     </style>
 </head>
@@ -484,6 +623,29 @@
         </div>
     </div>
 
+    <!-- ROVeX AI Chatbot Button -->
+    <div class="rovex-chat-btn" onclick="toggleChat()">
+        <i class="fas fa-robot"></i>
+        <span>ROVeX</span>
+    </div>
+
+    <!-- ROVeX AI Chat Window -->
+    <div class="chat-window" id="chatWindow">
+        <div class="chat-header">
+            <h4>ROVeX - Your Islamic AI Assistant</h4>
+            <button class="close-chat" onclick="toggleChat()">×</button>
+        </div>
+        <div class="chat-messages" id="chatMessages">
+            <div class="message bot-message">
+                আসসালামু আলাইকুম! আমি ROVeX, আপনার ইসলামিক সহায়ক। জানতে চান কোনো বিষয়ে?
+            </div>
+        </div>
+        <div class="chat-input-area">
+            <input type="text" id="chatInput" placeholder="আপনার প্রশ্ন লিখুন..." onkeypress="if(event.key==='Enter') sendMessage()">
+            <button onclick="sendMessage()"><i class="fas fa-paper-plane"></i></button>
+        </div>
+    </div>
+
     <div class="side-menu-btn" onclick="toggleSideOptions()">
         <span></span><span></span><span></span>
     </div>
@@ -500,7 +662,6 @@
     </div>
 
     <script>
-        // --- Schedule & Duas ---
         function generateData(sH, sM, iH, iM) {
             let res = [];
             let dates = ["১৯ ফেব", "২০ ফেব", "২১ ফেব", "২২ ফেব", "২৩ ফেব", "২৪ ফেব", "২৫ ফেব", "২৬ ফেব", "২৭ ফেব", "২৮ ফেব", "০১ মার্চ", "০২ মার্চ", "০৩ মার্চ", "০৪ মার্চ", "০৫ মার্চ", "০৬ মার্চ", "০৭ মার্চ", "০৮ মার্চ", "০৯ মার্চ", "১০ মার্চ", "১১ মার্চ", "১২ মার্চ", "১৩ মার্চ", "১৪ মার্চ", "১৫ মার্চ", "১৬ মার্চ", "১৭ মার্চ", "১৮ মার্চ", "১৯ মার্চ", "২০ মার্চ"];
@@ -591,7 +752,6 @@
             document.getElementById('modal-body').innerHTML = h + `</table><button class="btn" onclick="openModal('cal')">ফিরে যান</button>`;
         }
 
-        // Premium Creator Section - English Only
         function showPremiumCreator() {
             const body = document.getElementById('modal-body');
             body.innerHTML = `
@@ -602,9 +762,7 @@
                         </div>
                         <h2 class="creator-name-premium">Shamiul Islam Borson</h2>
                         <div class="creator-badge">
-                            <i class="fas fa-star"></i>
                             <span>CREATOR</span>
-                            <i class="fas fa-star"></i>
                         </div>
                     </div>
                     
@@ -658,7 +816,6 @@
             `;
         }
 
-        // Video Search Functions
         function showVideoSearch() {
             const body = document.getElementById('modal-body');
             body.innerHTML = `
@@ -685,7 +842,6 @@
             
             resultsDiv.innerHTML = '<div style="grid-column:1/-1; text-align:center; padding:30px;">⏳ খোঁজা হচ্ছে...</div>';
             
-            // Your API Key
             const apiKey = 'AIzaSyArgYYff2pvPL-MDuHNtqOIN-uMw5vkIeg';
             
             fetch(`https://www.googleapis.com/youtube/v3/search?part=snippet&maxResults=12&q=${encodeURIComponent(query)}&type=video&key=${apiKey}`)
@@ -735,7 +891,6 @@
             }
         }
 
-        // --- Tasbih Functions ---
         function renderTasUI() {
             const body = document.getElementById('modal-body');
             body.innerHTML = `
@@ -816,13 +971,11 @@
             bar.style.strokeDashoffset = offset;
         }
 
-        // Shaban Date Display (Before Ramadan)
         function updateShabanDisplay() {
             const today = new Date();
             const ramadanStart = new Date("February 19, 2026 00:00:00").getTime();
             const todayTime = today.getTime();
             
-            // Calculate days until Ramadan
             const diffTime = ramadanStart - todayTime;
             const diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24));
             
@@ -831,30 +984,25 @@
             const shabanText = document.getElementById('shabanText');
             
             if(diffDays === 1) {
-                // Tomorrow is Ramadan (30th Shaban)
                 shabanDayLabel.innerText = 'কালকে';
                 shabanDayNumber.innerText = '৩০';
                 shabanText.innerText = 'শাবান';
             } else if(diffDays === 0) {
-                // Today is Ramadan (1st Ramadan)
                 shabanDayLabel.innerText = 'আজকে';
                 shabanDayNumber.innerText = '১';
                 shabanText.innerText = 'রমজান';
             } else if(diffDays < 0) {
-                // Already in Ramadan
                 const ramadanDay = Math.abs(diffDays) + 1;
                 shabanDayLabel.innerText = 'আজকে';
                 shabanDayNumber.innerText = ramadanDay.toLocaleString('bn-BD');
                 shabanText.innerText = 'রমজান';
             } else {
-                // Still in Shaban
                 shabanDayLabel.innerText = 'আজকে';
                 shabanDayNumber.innerText = (29 - diffDays + 1).toLocaleString('bn-BD');
                 shabanText.innerText = 'শাবান';
             }
         }
 
-        // Other Global Functions
         function liveZak() { document.getElementById('zRes').innerText = "৳ " + Math.floor((document.getElementById('cash').value || 0) * 0.025).toLocaleString('bn-BD'); }
         function toggleSideOptions() { const s = document.getElementById('sideOptions'); s.style.display = s.style.display === 'flex' ? 'none' : 'flex'; }
         function toggleDarkMode() { document.body.classList.toggle('dark-mode'); }
@@ -872,9 +1020,148 @@
                     document.getElementById('secs').innerText = Math.max(0, Math.floor((diff % (1000*60)) / 1000)).toLocaleString('bn-BD');
                 }
                 
-                // Update Shaban/Ramadan display
                 updateShabanDisplay();
             }, 1000);
+        }
+
+        // ---------- Groq AI Chatbot Functions (API Key Integrated) ----------
+        const GROQ_API_KEY = "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";
+        const GROQ_API_URL = "https://api.groq.com/openai/v1/chat/completions";
+
+        function toggleChat() {
+            const chatWindow = document.getElementById('chatWindow');
+            if (chatWindow.style.display === 'flex') {
+                chatWindow.style.display = 'none';
+            } else {
+                chatWindow.style.display = 'flex';
+                displaySuggestedQuestions();
+            }
+        }
+
+        function displaySuggestedQuestions() {
+            const chatMessages = document.getElementById('chatMessages');
+            if (!document.querySelector('.suggested-questions')) {
+                const suggestionsDiv = document.createElement('div');
+                suggestionsDiv.className = 'suggested-questions';
+                suggestionsDiv.innerHTML = `
+                    <span class="suggested-q" onclick="sendSuggestedQuestion('রোজার সঠিক নিয়ম কী?')">🌙 রোজার নিয়ম</span>
+                    <span class="suggested-q" onclick="sendSuggestedQuestion('ইফতারের দোয়া কী?')">🤲 ইফতারের দোয়া</span>
+                    <span class="suggested-q" onclick="sendSuggestedQuestion('সেহরির সময় কখন?')">⏰ সেহরির সময়</span>
+                    <span class="suggested-q" onclick="sendSuggestedQuestion('তাহাজ্জুদ নামাজের নিয়ম?')">🕌 তাহাজ্জুদ</span>
+                `;
+                chatMessages.appendChild(suggestionsDiv);
+            }
+        }
+
+        function sendSuggestedQuestion(question) {
+            document.getElementById('chatInput').value = question;
+            sendMessage();
+        }
+
+        function showTypingIndicator() {
+            const chatMessages = document.getElementById('chatMessages');
+            const typingDiv = document.createElement('div');
+            typingDiv.id = 'typingIndicator';
+            typingDiv.className = 'message bot-message';
+            typingDiv.innerHTML = '<i>ROVeX টাইপ করছে...</i>';
+            chatMessages.appendChild(typingDiv);
+            chatMessages.scrollTop = chatMessages.scrollHeight;
+        }
+
+        function removeTypingIndicator() {
+            const typing = document.getElementById('typingIndicator');
+            if (typing) typing.remove();
+        }
+
+        async function sendMessage() {
+            const input = document.getElementById('chatInput');
+            const message = input.value.trim();
+            if (message === '') return;
+
+            const chatMessages = document.getElementById('chatMessages');
+            
+            const suggestedDiv = document.querySelector('.suggested-questions');
+            if (suggestedDiv) suggestedDiv.remove();
+
+            const userMessageDiv = document.createElement('div');
+            userMessageDiv.className = 'message user-message';
+            userMessageDiv.innerText = message;
+            chatMessages.appendChild(userMessageDiv);
+
+            chatMessages.scrollTop = chatMessages.scrollHeight;
+            input.value = '';
+
+            showTypingIndicator();
+
+            const botResponse = await getGroqResponse(message);
+            
+            removeTypingIndicator();
+
+            const botMessageDiv = document.createElement('div');
+            botMessageDiv.className = 'message bot-message';
+            botMessageDiv.innerText = botResponse;
+            chatMessages.appendChild(botMessageDiv);
+            chatMessages.scrollTop = chatMessages.scrollHeight;
+        }
+
+        async function getGroqResponse(userMessage) {
+            try {
+                const response = await fetch(GROQ_API_URL, {
+                    method: "POST",
+                    headers: {
+                        "Authorization": `Bearer ${GROQ_API_KEY}`,
+                        "Content-Type": "application/json"
+                    },
+                    body: JSON.stringify({
+                        model: "llama-3.3-70b-versatile",
+                        messages: [
+                            {
+                                role: "system",
+                                content: `তুমি "ROVeX" নামের একটি ইসলামিক AI সহায়ক। 
+                                তুমি Dinislam ওয়েবসাইটের অংশ। 
+                                সবসময় বাংলায় উত্তর দাও। 
+                                কুরআন ও হাদিসের আলোকে নির্ভুল তথ্য দাও।
+                                উত্তর সংক্ষিপ্ত ও সহজবোধ্য হবে।`
+                            },
+                            {
+                                role: "user",
+                                content: userMessage
+                            }
+                        ],
+                        temperature: 0.7,
+                        max_tokens: 1024
+                    })
+                });
+                
+                const data = await response.json();
+                
+                if (data.error) {
+                    console.error("API Error:", data.error);
+                    return getFallbackResponse(userMessage);
+                }
+                
+                return data.choices[0].message.content;
+                
+            } catch (error) {
+                console.error("Network Error:", error);
+                return getFallbackResponse(userMessage);
+            }
+        }
+
+        function getFallbackResponse(message) {
+            const msg = message.toLowerCase();
+            
+            if (msg.includes('রোজা') || msg.includes('রোযা')) {
+                return "🌙 রোজা ইসলামের তৃতীয় স্তম্ভ। রমজান মাসের রোজা প্রতিটি সুস্থ, প্রাপ্তবয়স্ক মুসলমানের উপর ফরজ। রোজা রাখার নিয়ত: 'নাওয়াইতু আন আছুমা গাদাল লিল্লাহি তা'আলা মিন শাহরি রমাদান।'";
+            } else if (msg.includes('ইফতার')) {
+                return "🤲 ইফতারের দোয়া: 'আল্লাহুম্মা লাকা ছুমতু ওয়া আলা রিযক্বিকা আফতারতু।' অর্থ: 'হে আল্লাহ! আমি আপনার জন্য রোজা রেখেছি এবং আপনার দেওয়া রিযিক দিয়ে ইফতার করছি।'";
+            } else if (msg.includes('সেহরি')) {
+                return "⏰ সেহরি খাওয়া সুন্নত। সেহরির শেষ সময় সুবহে সাদিক। আজকের সেহরির সময় দেখতে 'সূচী' মেনুতে ক্লিক করুন।";
+            } else if (msg.includes('দোয়া')) {
+                return "📖 আপনার প্রয়োজনীয় দোয়া পেতে 'দোয়া' মেনুতে ক্লিক করুন। সেখানে ৩০টি গুরুত্বপূর্ণ দোয়া দেওয়া আছে।";
+            } else {
+                return "আপনার প্রশ্নের জন্য ধন্যবাদ। দয়া করে আরেকটু স্পেসিফিক করে বলুন। যেমন: 'রোজার নিয়ম', 'ইফতারের দোয়া', 'সেহরির সময়' ইত্যাদি। অথবা উপরের মেনু থেকে আপনার প্রয়োজনীয় তথ্য দেখুন।";
+            }
         }
 
         window.onload = () => { 
