@@ -28,6 +28,7 @@
 
         .container { max-width: 1000px; margin: 0 auto; padding: 20px; }
         
+        /* Updated Hero Section */
         .hero { 
             background: var(--bg-gradient); 
             color: white; 
@@ -100,11 +101,19 @@
             font-weight: 600;
             margin-top: 5px;
         }
+        .eid-label {
+            text-align: center;
+            margin-top: 15px;
+            font-size: 0.85rem;
+            font-family: 'SutonnyMJ', 'Hind Siliguri', sans-serif;
+            opacity: 0.9;
+            letter-spacing: 0.5px;
+        }
         .timer { 
             display: flex; 
             justify-content: center; 
             gap: 8px; 
-            margin-top: 20px;
+            margin-top: 15px;
             position: relative;
             z-index: 1;
         }
@@ -118,6 +127,95 @@
         }
         .t-box span { display: block; font-size: 1.6rem; font-weight: 700; color: var(--accent); }
 
+        /* Welcome Page Styles */
+        .welcome-page {
+            min-height: 100vh;
+            background: var(--bg-gradient);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+        .welcome-card {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border-radius: 40px;
+            padding: 40px 30px;
+            max-width: 500px;
+            width: 100%;
+            box-shadow: 0 30px 60px rgba(0, 0, 0, 0.3);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+        .welcome-logo {
+            text-align: center;
+            margin-bottom: 25px;
+        }
+        .welcome-logo img {
+            width: 90px;
+            height: 90px;
+            border-radius: 50%;
+            border: 4px solid var(--accent);
+            object-fit: cover;
+        }
+        .welcome-title {
+            font-size: 2.2rem;
+            font-weight: 800;
+            text-align: center;
+            background: linear-gradient(135deg, var(--primary), var(--accent));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 15px;
+        }
+        .welcome-message {
+            background: linear-gradient(145deg, #f8fafc, #e2e8f0);
+            padding: 25px;
+            border-radius: 25px;
+            margin: 25px 0;
+            color: var(--primary);
+            line-height: 1.8;
+            font-size: 1rem;
+        }
+        .welcome-message p {
+            margin-bottom: 12px;
+        }
+        .welcome-message p:last-child {
+            margin-bottom: 0;
+        }
+        .user-name-highlight {
+            font-size: 1.8rem;
+            font-weight: 800;
+            color: var(--accent);
+            text-align: center;
+            margin-bottom: 10px;
+        }
+        .welcome-buttons {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+        .btn-primary {
+            background: linear-gradient(135deg, var(--accent), var(--secondary));
+            color: white;
+            border: none;
+            padding: 16px;
+            border-radius: 20px;
+            font-weight: 700;
+            font-size: 1.1rem;
+            cursor: pointer;
+            width: 100%;
+            box-shadow: 0 10px 20px rgba(6, 182, 212, 0.3);
+        }
+        .btn-secondary {
+            background: white;
+            color: var(--primary);
+            border: 2px solid var(--accent);
+            padding: 16px;
+            border-radius: 20px;
+            font-weight: 700;
+            font-size: 1.1rem;
+            cursor: pointer;
+            width: 100%;
+        }
         .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(130px, 1fr)); gap: 18px; }
         .card { background: var(--card-bg); padding: 25px; border-radius: 25px; text-align: center; cursor: pointer; box-shadow: 0 5px 15px rgba(0,0,0,0.05); }
 
@@ -125,102 +223,110 @@
         .modal-content { background: var(--card-bg); color: var(--text-color); width: 92%; max-width: 550px; padding: 25px; border-radius: 30px; max-height: 85vh; overflow-y: auto; position: relative; }
         .close { position: absolute; top: 15px; right: 20px; font-size: 32px; cursor: pointer; color: #94a3b8; }
 
+        /* Updated Premium Creator Styles - More Attractive */
         .premium-creator {
             background: linear-gradient(145deg, var(--card-bg), var(--body-bg));
             border-radius: 30px;
             overflow: hidden;
-        }
-        .creator-header {
-            background: linear-gradient(135deg, var(--primary), var(--secondary));
-            padding: 30px 20px;
-            text-align: center;
             position: relative;
         }
-        .creator-header::before {
+        .premium-creator::before {
             content: '';
             position: absolute;
             top: 0;
             left: 0;
             right: 0;
-            bottom: 0;
-            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" opacity="0.1"><path d="M50 15 L61 35 L83 38 L67 54 L71 76 L50 65 L29 76 L33 54 L17 38 L39 35 Z" fill="white"/></svg>');
-            background-size: 50px;
-            opacity: 0.1;
+            height: 200px;
+            background: linear-gradient(135deg, var(--primary), var(--secondary), var(--accent));
+            z-index: 0;
+        }
+        .creator-header {
+            position: relative;
+            z-index: 1;
+            padding: 40px 20px 30px;
+            text-align: center;
         }
         .creator-avatar {
-            width: 120px;
-            height: 120px;
+            width: 140px;
+            height: 140px;
             border-radius: 50%;
-            border: 5px solid var(--gold);
+            border: 5px solid white;
             padding: 5px;
-            background: white;
-            margin: 0 auto 15px;
+            background: linear-gradient(135deg, var(--accent), var(--gold));
+            margin: 0 auto 20px;
             position: relative;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+            animation: glow 2s ease-in-out infinite;
+        }
+        @keyframes glow {
+            0%, 100% { box-shadow: 0 20px 40px rgba(6, 182, 212, 0.3); }
+            50% { box-shadow: 0 20px 60px rgba(212, 175, 55, 0.5); }
         }
         .creator-avatar img {
             width: 100%;
             height: 100%;
             border-radius: 50%;
             object-fit: cover;
+            border: 3px solid white;
         }
         .creator-name-premium {
-            font-size: 2rem;
+            font-size: 2.2rem;
             font-weight: 800;
             color: white;
-            margin-bottom: 5px;
-            text-shadow: 0 2px 10px rgba(0,0,0,0.3);
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 10px rgba(0,0,0,0.3);
         }
         .creator-badge {
             display: inline-flex;
             align-items: center;
-            gap: 5px;
+            gap: 8px;
             background: rgba(255,255,255,0.2);
-            padding: 8px 20px;
+            padding: 10px 25px;
             border-radius: 50px;
             color: white;
-            font-size: 0.9rem;
-            backdrop-filter: blur(5px);
+            font-size: 1rem;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255,255,255,0.3);
+        }
+        .creator-badge i {
+            color: var(--gold);
         }
         .creator-content {
+            position: relative;
+            z-index: 1;
             padding: 30px;
+            background: var(--card-bg);
+            border-radius: 30px 30px 0 0;
+            margin-top: -20px;
         }
         .creator-quote {
             background: linear-gradient(135deg, rgba(6, 182, 212, 0.1), rgba(99, 102, 241, 0.1));
             border-left: 5px solid var(--accent);
-            padding: 20px;
+            padding: 25px;
             border-radius: 15px;
             margin-bottom: 25px;
-            font-size: 1rem;
+            font-size: 1.1rem;
             line-height: 1.8;
             color: var(--text-color);
             position: relative;
+            border-right: 1px solid rgba(6, 182, 212, 0.2);
+            border-bottom: 1px solid rgba(6, 182, 212, 0.2);
         }
         .creator-quote i {
             color: var(--accent);
-            margin-right: 5px;
-        }
-        .creator-quote::before {
-            content: '"';
-            position: absolute;
-            top: -10px;
-            left: 10px;
-            font-size: 5rem;
-            color: var(--accent);
-            opacity: 0.1;
-            font-family: serif;
+            margin-right: 8px;
         }
         .creator-message {
-            background: var(--card-bg);
+            background: linear-gradient(145deg, rgba(255,255,255,0.5), rgba(255,255,255,0.2));
             border-radius: 20px;
-            padding: 20px;
+            padding: 25px;
             margin-bottom: 25px;
             border: 1px solid rgba(6, 182, 212, 0.2);
-            box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
         }
         .creator-message p {
-            margin-bottom: 15px;
-            line-height: 1.8;
+            margin-bottom: 18px;
+            line-height: 1.9;
             color: var(--text-color);
         }
         .creator-message p:last-child {
@@ -228,33 +334,36 @@
         }
         .creator-highlight {
             display: inline-block;
-            background: var(--accent);
+            background: linear-gradient(135deg, var(--accent), var(--secondary));
             color: white;
-            padding: 2px 10px;
+            padding: 3px 15px;
             border-radius: 50px;
-            font-size: 0.8rem;
-            margin-right: 5px;
+            font-size: 0.9rem;
+            margin-right: 8px;
+            font-weight: 600;
         }
         .creator-stats {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
             gap: 15px;
-            margin-bottom: 25px;
+            margin-bottom: 30px;
         }
         .stat-item {
             text-align: center;
-            padding: 15px;
-            background: rgba(6, 182, 212, 0.05);
-            border-radius: 15px;
+            padding: 20px;
+            background: linear-gradient(145deg, rgba(6, 182, 212, 0.1), rgba(99, 102, 241, 0.1));
+            border-radius: 20px;
+            border: 1px solid rgba(6, 182, 212, 0.3);
         }
         .stat-value {
-            font-size: 1.5rem;
+            font-size: 1.8rem;
             font-weight: 800;
             color: var(--accent);
         }
         .stat-label {
-            font-size: 0.8rem;
-            opacity: 0.7;
+            font-size: 0.9rem;
+            opacity: 0.8;
+            font-weight: 600;
         }
         .creator-footer {
             text-align: center;
@@ -263,13 +372,13 @@
             display: flex;
             justify-content: center;
             gap: 15px;
-            margin-top: 20px;
+            margin-top: 25px;
         }
         .social-link {
-            width: 50px;
-            height: 50px;
+            width: 55px;
+            height: 55px;
             border-radius: 50%;
-            background: var(--primary);
+            background: linear-gradient(145deg, var(--primary), var(--secondary));
             color: white;
             display: flex;
             align-items: center;
@@ -277,108 +386,51 @@
             text-decoration: none;
             font-size: 1.5rem;
             transition: 0.3s;
+            border: 2px solid rgba(255,255,255,0.3);
         }
         .social-link:hover {
-            background: var(--accent);
-            transform: translateY(-5px);
+            transform: translateY(-8px) rotate(360deg);
+            background: linear-gradient(145deg, var(--accent), var(--gold));
         }
         .fb-btn-premium {
             background: linear-gradient(135deg, #1877f2, #0d5ab9);
             color: white;
             text-decoration: none;
-            padding: 15px 30px;
+            padding: 16px 35px;
             border-radius: 50px;
             display: inline-block;
             font-weight: 700;
             margin-top: 20px;
-            box-shadow: 0 10px 20px rgba(24, 119, 242, 0.3);
+            box-shadow: 0 10px 25px rgba(24, 119, 242, 0.4);
             transition: 0.3s;
+            font-size: 1.1rem;
         }
         .fb-btn-premium:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 15px 30px rgba(24, 119, 242, 0.4);
+            transform: translateY(-5px);
+            box-shadow: 0 20px 35px rgba(24, 119, 242, 0.5);
         }
 
-        .video-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-            gap: 15px;
-            margin-top: 20px;
-        }
-        .video-card {
-            background: var(--card-bg);
-            border-radius: 15px;
-            overflow: hidden;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-            cursor: pointer;
-            transition: transform 0.2s;
-            border: 1px solid rgba(0,0,0,0.05);
-        }
-        .video-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 25px rgba(0,0,0,0.15);
-        }
-        .video-thumb {
-            width: 100%;
-            height: 120px;
-            object-fit: cover;
-            background: #ddd;
-        }
-        .video-info {
-            padding: 12px;
-        }
-        .video-title {
-            font-weight: 600;
-            font-size: 0.9rem;
-            margin-bottom: 5px;
-            display: -webkit-box;
-            -webkit-line-clamp: 2;
-            -webkit-box-orient: vertical;
-            overflow: hidden;
-        }
-        .video-channel {
-            font-size: 0.75rem;
-            color: var(--accent);
-            opacity: 0.8;
-        }
-        .tasbih-container {
-            background: linear-gradient(145deg, var(--card-bg), var(--body-bg));
-            padding: 30px 20px;
-            border-radius: 25px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-        }
-        .tasbih-tabs { 
-            display: flex; gap: 8px; margin-bottom: 25px; 
-            background: rgba(0,0,0,0.05); padding: 6px; border-radius: 20px; 
-        }
-        .tasbih-tab-btn { 
-            flex: 1; border: none; padding: 12px; border-radius: 15px; 
-            cursor: pointer; font-weight: 700; background: transparent; 
-            color: var(--text-color); font-size: 0.9rem;
-        }
+        /* Rest of the styles */
+        .video-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 15px; margin-top: 20px; }
+        .video-card { background: var(--card-bg); border-radius: 15px; overflow: hidden; box-shadow: 0 5px 15px rgba(0,0,0,0.1); cursor: pointer; transition: transform 0.2s; border: 1px solid rgba(0,0,0,0.05); }
+        .video-card:hover { transform: translateY(-5px); box-shadow: 0 10px 25px rgba(0,0,0,0.15); }
+        .video-thumb { width: 100%; height: 120px; object-fit: cover; background: #ddd; }
+        .video-info { padding: 12px; }
+        .video-title { font-weight: 600; font-size: 0.9rem; margin-bottom: 5px; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }
+        .video-channel { font-size: 0.75rem; color: var(--accent); opacity: 0.8; }
+        
+        .tasbih-container { background: linear-gradient(145deg, var(--card-bg), var(--body-bg)); padding: 30px 20px; border-radius: 25px; box-shadow: 0 10px 30px rgba(0,0,0,0.1); }
+        .tasbih-tabs { display: flex; gap: 8px; margin-bottom: 25px; background: rgba(0,0,0,0.05); padding: 6px; border-radius: 20px; }
+        .tasbih-tab-btn { flex: 1; border: none; padding: 12px; border-radius: 15px; cursor: pointer; font-weight: 700; background: transparent; color: var(--text-color); font-size: 0.9rem; }
         .tasbih-tab-btn.active { background: var(--accent); color: white; box-shadow: 0 4px 15px rgba(6, 182, 212, 0.3); }
-        .tasbih-display {
-            position: relative; width: 240px; height: 240px; margin: 0 auto 25px;
-            display: flex; align-items: center; justify-content: center;
-        }
-        .tasbih-main { 
-            width: 200px; height: 200px; background: var(--card-bg); 
-            border-radius: 50%; display: flex; flex-direction: column; 
-            align-items: center; justify-content: center; 
-            box-shadow: 0 15px 35px rgba(0,0,0,0.1), inset 0 0 15px rgba(0,0,0,0.05);
-            cursor: pointer; z-index: 5; transition: transform 0.1s active;
-        }
+        .tasbih-display { position: relative; width: 240px; height: 240px; margin: 0 auto 25px; display: flex; align-items: center; justify-content: center; }
+        .tasbih-main { width: 200px; height: 200px; background: var(--card-bg); border-radius: 50%; display: flex; flex-direction: column; align-items: center; justify-content: center; box-shadow: 0 15px 35px rgba(0,0,0,0.1), inset 0 0 15px rgba(0,0,0,0.05); cursor: pointer; z-index: 5; transition: transform 0.1s active; }
         .tasbih-main:active { transform: scale(0.95); }
         .progress-ring-svg { position: absolute; top:0; left:0; width: 240px; height: 240px; transform: rotate(-90deg); }
-        .progress-ring-circle { 
-            fill: transparent; stroke-width: 10; stroke-dasharray: 691; stroke-dashoffset: 691; 
-            stroke: var(--accent); transition: stroke-dashoffset 0.3s cubic-bezier(0.4, 0, 0.2, 1); 
-            stroke-linecap: round; filter: drop-shadow(0 0 5px var(--accent));
-        }
+        .progress-ring-circle { fill: transparent; stroke-width: 10; stroke-dasharray: 691; stroke-dashoffset: 691; stroke: var(--accent); transition: stroke-dashoffset 0.3s cubic-bezier(0.4, 0, 0.2, 1); stroke-linecap: round; filter: drop-shadow(0 0 5px var(--accent)); }
         .progress-ring-bg { fill: transparent; stroke: rgba(0,0,0,0.05); stroke-width: 10; }
         .t-count { font-size: 4.5rem; font-weight: 800; color: var(--primary); line-height: 1; margin-bottom: 5px; }
         .t-label { font-size: 1rem; font-weight: 600; color: var(--accent); letter-spacing: 1px; text-transform: uppercase; }
-        .tasbih-footer-btns { display: grid; grid-template-columns: 1fr; gap: 10px; }
         
         .dua-card { background: rgba(0,0,0,0.04); padding: 18px; border-radius: 20px; margin-bottom: 15px; border-left: 6px solid var(--accent); text-align: left; }
         .ar { font-size: 1.4rem; text-align: right; direction: rtl; margin: 10px 0; font-weight: bold; color: var(--primary); line-height: 1.8; font-family: 'Noto Naskh Arabic', serif; }
@@ -445,13 +497,8 @@
             line-height: 1.2;
             transition: transform 0.2s;
         }
-        .rovex-chat-btn:hover {
-            transform: scale(1.1);
-        }
-        .rovex-chat-btn i {
-            font-size: 1.3rem;
-            margin-bottom: 2px;
-        }
+        .rovex-chat-btn:hover { transform: scale(1.1); }
+        .rovex-chat-btn i { font-size: 1.3rem; margin-bottom: 2px; }
 
         .chat-window {
             position: fixed;
@@ -476,109 +523,58 @@
             justify-content: space-between;
             align-items: center;
         }
-        .chat-header h4 {
-            font-size: 1rem;
-            display: flex;
-            align-items: center;
-            gap: 5px;
-        }
-        .close-chat {
-            cursor: pointer;
-            font-size: 1.5rem;
-            background: none;
-            border: none;
-            color: white;
-        }
-        .chat-messages {
-            flex: 1;
-            padding: 15px;
-            overflow-y: auto;
-            background: var(--body-bg);
-            display: flex;
-            flex-direction: column;
-            gap: 10px;
-        }
-        .message {
-            padding: 12px;
-            border-radius: 18px;
-            max-width: 85%;
-            word-wrap: break-word;
-            font-size: 0.9rem;
-            line-height: 1.4;
-        }
-        .user-message {
-            background: var(--accent);
-            color: white;
-            align-self: flex-end;
-            border-bottom-right-radius: 5px;
-        }
-        .bot-message {
-            background: var(--card-bg);
-            color: var(--text-color);
-            align-self: flex-start;
-            border-bottom-left-radius: 5px;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
-        }
-        .chat-input-area {
-            padding: 15px;
-            background: var(--card-bg);
-            border-top: 1px solid #eee;
-            display: flex;
-            gap: 10px;
-        }
-        .chat-input-area input {
-            flex: 1;
-            padding: 12px;
-            border: 2px solid #e2e8f0;
-            border-radius: 25px;
-            outline: none;
-            background: var(--body-bg);
-            color: var(--text-color);
-        }
-        .chat-input-area input:focus {
-            border-color: var(--accent);
-        }
-        .chat-input-area button {
-            background: var(--accent);
-            color: white;
-            border: none;
-            width: 45px;
-            height: 45px;
-            border-radius: 50%;
-            cursor: pointer;
-            font-size: 1.2rem;
-        }
-        .suggested-questions {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 5px;
-            margin-top: 10px;
-        }
-        .suggested-q {
-            background: rgba(6, 182, 212, 0.1);
-            color: var(--accent);
-            padding: 8px 12px;
-            border-radius: 50px;
-            font-size: 0.75rem;
-            cursor: pointer;
-            border: 1px solid var(--accent);
-            white-space: nowrap;
-        }
-        .suggested-q:hover {
-            background: var(--accent);
-            color: white;
-        }
+        .chat-header h4 { font-size: 1rem; display: flex; align-items: center; gap: 5px; }
+        .chat-header i { color: var(--gold); }
+        .close-chat { cursor: pointer; font-size: 1.5rem; background: none; border: none; color: white; }
+        .chat-messages { flex: 1; padding: 15px; overflow-y: auto; background: var(--body-bg); display: flex; flex-direction: column; gap: 10px; }
+        .message { padding: 12px; border-radius: 18px; max-width: 85%; word-wrap: break-word; font-size: 0.9rem; line-height: 1.4; }
+        .user-message { background: var(--accent); color: white; align-self: flex-end; border-bottom-right-radius: 5px; }
+        .bot-message { background: var(--card-bg); color: var(--text-color); align-self: flex-start; border-bottom-left-radius: 5px; box-shadow: 0 2px 5px rgba(0,0,0,0.05); }
+        .chat-input-area { padding: 15px; background: var(--card-bg); border-top: 1px solid #eee; display: flex; gap: 10px; }
+        .chat-input-area input { flex: 1; padding: 12px; border: 2px solid #e2e8f0; border-radius: 25px; outline: none; background: var(--body-bg); color: var(--text-color); }
+        .chat-input-area input:focus { border-color: var(--accent); }
+        .chat-input-area button { background: var(--accent); color: white; border: none; width: 45px; height: 45px; border-radius: 50%; cursor: pointer; font-size: 1.2rem; }
+        .suggested-questions { display: flex; flex-wrap: wrap; gap: 5px; margin-top: 10px; }
+        .suggested-q { background: rgba(6, 182, 212, 0.1); color: var(--accent); padding: 8px 12px; border-radius: 50px; font-size: 0.75rem; cursor: pointer; border: 1px solid var(--accent); white-space: nowrap; }
+        .suggested-q:hover { background: var(--accent); color: white; }
     </style>
 </head>
 <body>
 
     <div id="login-page">
-        <div style="height:100vh; display:flex; justify-content:center; align-items:center; background:var(--bg-gradient); padding:20px;">
-            <div style="background: white; padding: 40px; border-radius: 30px; text-align: center; width: 100%; max-width: 400px;">
-                <img src="https://i.postimg.cc/yNhjsYJ4/1771310158774_01.jpg" style="width:90px; height:90px; border-radius:50%; margin-bottom:15px; border:4px solid var(--accent); object-fit: cover;">
-                <h2 style="color:var(--primary); margin-bottom: 20px;">DINISLAM</h2>
-                <input type="number" id="mobile" placeholder="মোবাইল নম্বর" style="width: 100%; padding: 15px; margin-bottom: 15px; border-radius: 12px; border: 1.5px solid #eee; text-align: center;">
-                <button class="btn" onclick="login()">শুরু করুন</button>
+        <div class="welcome-page">
+            <div class="welcome-card">
+                <div class="welcome-logo">
+                    <img src="https://i.postimg.cc/yNhjsYJ4/1771310158774_01.jpg" alt="Dinislam Logo">
+                </div>
+                <h1 class="welcome-title">DINISLAM</h1>
+                <p style="text-align: center; color: var(--primary); margin-bottom: 25px;">আপনার তথ্য দিন</p>
+                
+                <input type="text" id="userName" placeholder="আপনার নাম লিখুন" style="width: 100%; padding: 16px; margin-bottom: 15px; border-radius: 15px; border: 2px solid #e2e8f0; text-align: left; font-size: 1rem;">
+                <input type="number" id="mobile" placeholder="মোবাইল নম্বর" style="width: 100%; padding: 16px; margin-bottom: 20px; border-radius: 15px; border: 2px solid #e2e8f0; text-align: left; font-size: 1rem;">
+                
+                <button class="btn-primary" onclick="login()">প্রবেশ করুন</button>
+            </div>
+        </div>
+    </div>
+
+    <div id="welcome-page" style="display:none;">
+        <div class="welcome-page">
+            <div class="welcome-card">
+                <div class="welcome-logo">
+                    <img src="https://i.postimg.cc/yNhjsYJ4/1771310158774_01.jpg" alt="Dinislam Logo">
+                </div>
+                
+                <div class="user-name-highlight" id="displayUserName"></div>
+                
+                <div class="welcome-message" id="welcomeMessage">
+                    <!-- Dynamic welcome message will be inserted here -->
+                </div>
+                
+                <div class="welcome-buttons">
+                    <button class="btn-primary" onclick="enterMainPage()">মূল পৃষ্ঠায় প্রবেশ করুন</button>
+                    <button class="btn-secondary" onclick="downloadWelcomePDF()">Download PDF</button>
+                </div>
             </div>
         </div>
     </div>
@@ -600,17 +596,18 @@
                         <h2>২০২৬</h2>
                     </div>
                     <div class="hero-right">
-                        <div class="ramadan-day-label" id="shabanLabel">২৯ শে শাবান</div>
-                        <div class="ramadan-day-number" id="ramadanDay">২৯</div>
-                        <div class="ramadan-day-text" id="shabanText">শাবান</div>
+                        <div class="ramadan-day-label" id="currentDateLabel">আজকে</div>
+                        <div class="ramadan-day-number" id="currentDayNumber">৩০</div>
+                        <div class="ramadan-day-text" id="currentMonthName">শাবান</div>
                     </div>
                 </div>
                 <div class="timer">
-                    <div class="t-box"><span id="days">00</span><small>দিন</small></div>
-                    <div class="t-box"><span id="hours">00</span><small>ঘণ্টা</small></div>
-                    <div class="t-box"><span id="mins">00</span><small>মিনিট</small></div>
-                    <div class="t-box" style="background:var(--accent); border:none;"><span id="secs" style="color:white;">00</span><small style="color:white;">সেকেন্ড</small></div>
+                    <div class="t-box"><span id="days">০০</span><small>দিন</small></div>
+                    <div class="t-box"><span id="hours">০০</span><small>ঘণ্টা</small></div>
+                    <div class="t-box"><span id="mins">০০</span><small>মিনিট</small></div>
+                    <div class="t-box" style="background:var(--accent); border:none;"><span id="secs" style="color:white;">০০</span><small style="color:white;">সেকেন্ড</small></div>
                 </div>
+                <div class="eid-label">ঈদুল ফিতর আসতে সময় বাকি</div>
             </div>
 
             <div class="grid">
@@ -623,21 +620,20 @@
         </div>
     </div>
 
-    <!-- ROVeX AI Chatbot Button -->
+    <!-- Rovex AI Chatbot -->
     <div class="rovex-chat-btn" onclick="toggleChat()">
         <i class="fas fa-robot"></i>
-        <span>ROVeX</span>
+        <span>Rovex</span>
     </div>
 
-    <!-- ROVeX AI Chat Window -->
     <div class="chat-window" id="chatWindow">
         <div class="chat-header">
-            <h4>ROVeX - Your Islamic AI Assistant</h4>
+            <h4><i class="fas fa-star"></i> Rovex (AI Assistant) <i class="fas fa-star"></i></h4>
             <button class="close-chat" onclick="toggleChat()">×</button>
         </div>
         <div class="chat-messages" id="chatMessages">
             <div class="message bot-message">
-                আসসালামু আলাইকুম! আমি ROVeX, আপনার ইসলামিক সহায়ক। জানতে চান কোনো বিষয়ে?
+                আসসালামু আলাইকুম! আমি Rovex, আপনার ইসলামিক সহায়ক। জানতে চান কোনো বিষয়ে?
             </div>
         </div>
         <div class="chat-input-area">
@@ -662,6 +658,7 @@
     </div>
 
     <script>
+        // --- Schedule & Duas ---
         function generateData(sH, sM, iH, iM) {
             let res = [];
             let dates = ["১৯ ফেব", "২০ ফেব", "২১ ফেব", "২২ ফেব", "২৩ ফেব", "২৪ ফেব", "২৫ ফেব", "২৬ ফেব", "২৭ ফেব", "২৮ ফেব", "০১ মার্চ", "০২ মার্চ", "০৩ মার্চ", "০৪ মার্চ", "০৫ মার্চ", "০৬ মার্চ", "০৭ মার্চ", "০৮ মার্চ", "০৯ মার্চ", "১০ মার্চ", "১১ মার্চ", "১২ মার্চ", "১৩ মার্চ", "১৪ মার্চ", "১৫ মার্চ", "১৬ মার্চ", "১৭ মার্চ", "১৮ মার্চ", "১৯ মার্চ", "২০ মার্চ"];
@@ -720,8 +717,78 @@
         let tasCount = parseInt(localStorage.getItem('tasCount')) || 0;
         let generalTasCount = parseInt(localStorage.getItem('generalTasCount')) || 0;
         let currentTasMode = 'regular';
+        let currentUserName = '';
 
-        function login() { if(document.getElementById('mobile').value.length >= 6) { localStorage.setItem('userMobile', 'true'); document.getElementById('login-page').style.display = 'none'; document.getElementById('dashboard').style.display = 'block'; } }
+        function login() {
+            const name = document.getElementById('userName').value.trim();
+            const mobile = document.getElementById('mobile').value.trim();
+            
+            if(name && mobile.length >= 6) {
+                currentUserName = name;
+                localStorage.setItem('userName', name);
+                localStorage.setItem('userMobile', mobile);
+                
+                document.getElementById('login-page').style.display = 'none';
+                document.getElementById('welcome-page').style.display = 'block';
+                
+                displayWelcomeMessage(name);
+            } else {
+                alert('অনুগ্রহ করে আপনার নাম এবং সঠিক মোবাইল নম্বর দিন');
+            }
+        }
+
+        function displayWelcomeMessage(name) {
+            document.getElementById('displayUserName').innerText = name;
+            
+            const hours = new Date().getHours();
+            let greeting = '';
+            
+            if(hours >= 5 && hours < 12) greeting = 'শুভ সকাল';
+            else if(hours >= 12 && hours < 17) greeting = 'শুভ বিকাল';
+            else greeting = 'শুভ সন্ধ্যা';
+            
+            const message = `
+                <p>${greeting} ${name},</p>
+                <p>DINISLAM প্ল্যাটফর্মে আপনাকে স্বাগতম। এই পবিত্র মাস রমজানে আপনার ইবাদত-বন্দেগি যেন সহজ ও সুন্দর হয়, সেজন্য আমাদের এই ক্ষুদ্র প্রয়াস।</p>
+                <p>আপনার জন্য রইল রমজানের সেহরি ও ইফতারের সময়সূচি, দোয়া, তসবিহ এবং জাকাত ক্যালকুলেটরসহ প্রয়োজনীয় সব তথ্য।</p>
+                <p>আশা করি পুরো মাসটি আপনি সুন্দরভাবে অতিবাহিত করতে পারবেন। আল্লাহ আপনার সব নেক কাজ কবুল করুন।</p>
+            `;
+            
+            document.getElementById('welcomeMessage').innerHTML = message;
+        }
+
+        function enterMainPage() {
+            document.getElementById('welcome-page').style.display = 'none';
+            document.getElementById('dashboard').style.display = 'block';
+        }
+
+        function downloadWelcomePDF() {
+            // Create a simple PDF download simulation
+            const name = currentUserName || localStorage.getItem('userName');
+            const content = `
+                DINISLAM - রমজান ২০২৬
+                ------------------------
+                প্রিয় ${name},
+                
+                আপনাকে স্বাগতম DINISLAM প্ল্যাটফর্মে।
+                
+                রমজান মাসের সময়সূচি, দোয়া, তসবিহ ও জাকাত ক্যালকুলেটর পেতে আমাদের অ্যাপ ব্যবহার করুন।
+                
+                আপনার জন্য রইল আন্তরিক দোয়া - আল্লাহ আপনার সব নেক কাজ কবুল করুন এবং রমজানের পুরো মাস আপনি সুস্থ ও সুন্দরভাবে অতিবাহিত করতে পারেন।
+                
+                ধন্যবাদ।
+                শামিউল ইসলাম বর্ষন
+                ক্রিয়েটর, DINISLAM
+            `;
+            
+            const blob = new Blob([content], { type: 'text/plain' });
+            const url = window.URL.createObjectURL(blob);
+            const a = document.createElement('a');
+            a.href = url;
+            a.download = `DINISLAM_Welcome_${name}.txt`;
+            a.click();
+            window.URL.revokeObjectURL(url);
+        }
 
         function openModal(type) {
             const body = document.getElementById('modal-body');
@@ -762,14 +829,16 @@
                         </div>
                         <h2 class="creator-name-premium">Shamiul Islam Borson</h2>
                         <div class="creator-badge">
+                            <i class="fas fa-crown"></i>
                             <span>CREATOR</span>
+                            <i class="fas fa-crown"></i>
                         </div>
                     </div>
                     
                     <div class="creator-content">
                         <div class="creator-quote">
                             <i class="fas fa-quote-right"></i> 
-                            "Building meaningful digital experiences for the Ummah"
+                            Building meaningful digital experiences for the Ummah
                         </div>
                         
                         <div class="creator-message">
@@ -971,7 +1040,7 @@
             bar.style.strokeDashoffset = offset;
         }
 
-        function updateShabanDisplay() {
+        function updateCurrentDate() {
             const today = new Date();
             const ramadanStart = new Date("February 19, 2026 00:00:00").getTime();
             const todayTime = today.getTime();
@@ -979,27 +1048,27 @@
             const diffTime = ramadanStart - todayTime;
             const diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24));
             
-            const shabanDayLabel = document.getElementById('shabanLabel');
-            const shabanDayNumber = document.getElementById('ramadanDay');
-            const shabanText = document.getElementById('shabanText');
+            const dateLabel = document.getElementById('currentDateLabel');
+            const dayNumber = document.getElementById('currentDayNumber');
+            const monthName = document.getElementById('currentMonthName');
             
             if(diffDays === 1) {
-                shabanDayLabel.innerText = 'কালকে';
-                shabanDayNumber.innerText = '৩০';
-                shabanText.innerText = 'শাবান';
+                dateLabel.innerText = 'আগামীকাল';
+                dayNumber.innerText = '১';
+                monthName.innerText = 'রমজান';
             } else if(diffDays === 0) {
-                shabanDayLabel.innerText = 'আজকে';
-                shabanDayNumber.innerText = '১';
-                shabanText.innerText = 'রমজান';
+                dateLabel.innerText = 'আজকে';
+                dayNumber.innerText = '১';
+                monthName.innerText = 'রমজান';
             } else if(diffDays < 0) {
                 const ramadanDay = Math.abs(diffDays) + 1;
-                shabanDayLabel.innerText = 'আজকে';
-                shabanDayNumber.innerText = ramadanDay.toLocaleString('bn-BD');
-                shabanText.innerText = 'রমজান';
+                dateLabel.innerText = 'আজকে';
+                dayNumber.innerText = ramadanDay.toLocaleString('bn-BD');
+                monthName.innerText = 'রমজান';
             } else {
-                shabanDayLabel.innerText = 'আজকে';
-                shabanDayNumber.innerText = (29 - diffDays + 1).toLocaleString('bn-BD');
-                shabanText.innerText = 'শাবান';
+                dateLabel.innerText = 'আজকে';
+                dayNumber.innerText = (29 - diffDays + 1).toLocaleString('bn-BD');
+                monthName.innerText = 'শাবান';
             }
         }
 
@@ -1019,12 +1088,11 @@
                     document.getElementById('mins').innerText = Math.max(0, Math.floor((diff % (1000*60*60)) / (1000*60))).toLocaleString('bn-BD');
                     document.getElementById('secs').innerText = Math.max(0, Math.floor((diff % (1000*60)) / 1000)).toLocaleString('bn-BD');
                 }
-                
-                updateShabanDisplay();
+                updateCurrentDate();
             }, 1000);
         }
 
-        // ---------- Groq AI Chatbot Functions (API Key Integrated) ----------
+        // Groq AI Chatbot Functions
         const GROQ_API_KEY = "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";
         const GROQ_API_URL = "https://api.groq.com/openai/v1/chat/completions";
 
@@ -1044,10 +1112,10 @@
                 const suggestionsDiv = document.createElement('div');
                 suggestionsDiv.className = 'suggested-questions';
                 suggestionsDiv.innerHTML = `
-                    <span class="suggested-q" onclick="sendSuggestedQuestion('রোজার সঠিক নিয়ম কী?')">🌙 রোজার নিয়ম</span>
-                    <span class="suggested-q" onclick="sendSuggestedQuestion('ইফতারের দোয়া কী?')">🤲 ইফতারের দোয়া</span>
-                    <span class="suggested-q" onclick="sendSuggestedQuestion('সেহরির সময় কখন?')">⏰ সেহরির সময়</span>
-                    <span class="suggested-q" onclick="sendSuggestedQuestion('তাহাজ্জুদ নামাজের নিয়ম?')">🕌 তাহাজ্জুদ</span>
+                    <span class="suggested-q" onclick="sendSuggestedQuestion('রোজার সঠিক নিয়ম কী?')">রোজার নিয়ম</span>
+                    <span class="suggested-q" onclick="sendSuggestedQuestion('ইফতারের দোয়া কী?')">ইফতারের দোয়া</span>
+                    <span class="suggested-q" onclick="sendSuggestedQuestion('সেহরির সময় কখন?')">সেহরির সময়</span>
+                    <span class="suggested-q" onclick="sendSuggestedQuestion('তাহাজ্জুদ নামাজের নিয়ম?')">তাহাজ্জুদ</span>
                 `;
                 chatMessages.appendChild(suggestionsDiv);
             }
@@ -1063,7 +1131,7 @@
             const typingDiv = document.createElement('div');
             typingDiv.id = 'typingIndicator';
             typingDiv.className = 'message bot-message';
-            typingDiv.innerHTML = '<i>ROVeX টাইপ করছে...</i>';
+            typingDiv.innerHTML = '<i>Rovex টাইপ করছে...</i>';
             chatMessages.appendChild(typingDiv);
             chatMessages.scrollTop = chatMessages.scrollHeight;
         }
@@ -1117,7 +1185,7 @@
                         messages: [
                             {
                                 role: "system",
-                                content: `তুমি "ROVeX" নামের একটি ইসলামিক AI সহায়ক। 
+                                content: `তুমি "Rovex" নামের একটি ইসলামিক AI সহায়ক। 
                                 তুমি Dinislam ওয়েবসাইটের অংশ। 
                                 সবসময় বাংলায় উত্তর দাও। 
                                 কুরআন ও হাদিসের আলোকে নির্ভুল তথ্য দাও।
@@ -1152,22 +1220,23 @@
             const msg = message.toLowerCase();
             
             if (msg.includes('রোজা') || msg.includes('রোযা')) {
-                return "🌙 রোজা ইসলামের তৃতীয় স্তম্ভ। রমজান মাসের রোজা প্রতিটি সুস্থ, প্রাপ্তবয়স্ক মুসলমানের উপর ফরজ। রোজা রাখার নিয়ত: 'নাওয়াইতু আন আছুমা গাদাল লিল্লাহি তা'আলা মিন শাহরি রমাদান।'";
+                return "রোজা ইসলামের তৃতীয় স্তম্ভ। রমজান মাসের রোজা প্রতিটি সুস্থ, প্রাপ্তবয়স্ক মুসলমানের উপর ফরজ। রোজা রাখার নিয়ত: 'নাওয়াইতু আন আছুমা গাদাল লিল্লাহি তা'আলা মিন শাহরি রমাদান।'";
             } else if (msg.includes('ইফতার')) {
-                return "🤲 ইফতারের দোয়া: 'আল্লাহুম্মা লাকা ছুমতু ওয়া আলা রিযক্বিকা আফতারতু।' অর্থ: 'হে আল্লাহ! আমি আপনার জন্য রোজা রেখেছি এবং আপনার দেওয়া রিযিক দিয়ে ইফতার করছি।'";
+                return "ইফতারের দোয়া: 'আল্লাহুম্মা লাকা ছুমতু ওয়া আলা রিযক্বিকা আফতারতু।' অর্থ: 'হে আল্লাহ! আমি আপনার জন্য রোজা রেখেছি এবং আপনার দেওয়া রিযিক দিয়ে ইফতার করছি।'";
             } else if (msg.includes('সেহরি')) {
-                return "⏰ সেহরি খাওয়া সুন্নত। সেহরির শেষ সময় সুবহে সাদিক। আজকের সেহরির সময় দেখতে 'সূচী' মেনুতে ক্লিক করুন।";
+                return "সেহরি খাওয়া সুন্নত। সেহরির শেষ সময় সুবহে সাদিক। আজকের সেহরির সময় দেখতে 'সূচী' মেনুতে ক্লিক করুন।";
             } else if (msg.includes('দোয়া')) {
-                return "📖 আপনার প্রয়োজনীয় দোয়া পেতে 'দোয়া' মেনুতে ক্লিক করুন। সেখানে ৩০টি গুরুত্বপূর্ণ দোয়া দেওয়া আছে।";
+                return "আপনার প্রয়োজনীয় দোয়া পেতে 'দোয়া' মেনুতে ক্লিক করুন। সেখানে ৩০টি গুরুত্বপূর্ণ দোয়া দেওয়া আছে।";
             } else {
                 return "আপনার প্রশ্নের জন্য ধন্যবাদ। দয়া করে আরেকটু স্পেসিফিক করে বলুন। যেমন: 'রোজার নিয়ম', 'ইফতারের দোয়া', 'সেহরির সময়' ইত্যাদি। অথবা উপরের মেনু থেকে আপনার প্রয়োজনীয় তথ্য দেখুন।";
             }
         }
 
         window.onload = () => { 
-            if(localStorage.getItem('userMobile')) { 
+            if(localStorage.getItem('userMobile') && localStorage.getItem('userName')) { 
                 document.getElementById('login-page').style.display = 'none'; 
-                document.getElementById('dashboard').style.display = 'block'; 
+                document.getElementById('welcome-page').style.display = 'block';
+                displayWelcomeMessage(localStorage.getItem('userName'));
             } 
             startTimer(); 
         };
