@@ -227,7 +227,7 @@
             </div>
 
             <div class="grid">
-                <div class="card" onclick="openModal('cal')">সূচী</div>
+                <div class="card" onclick="openModal('cal')">সময়সূচী</div>
                 <div class="card" onclick="openModal('dua')">দোয়া</div>
                 <div class="card" onclick="openModal('tas')">তসবিহ</div>
                 <div class="card" onclick="openModal('zak')">জাকাত</div>
@@ -247,7 +247,8 @@
             <button class="close-chat" onclick="toggleChat()">×</button>
         </div>
         <div class="chat-messages" id="chatMessages">
-            <div class="message bot-message">আসসালামু আলাইকুম। রমজান বিষয়ে জানতে চান?</div>
+            <div class="message bot-message">আসসালামু আলাইকুম।
+আমি ROVex, আপনার ইসলামিক AI সহকারী। কুরআন, হাদিস ও দ্বীনি বিষয়ে যেকোনো প্রশ্নে সাহায্য করতে প্রস্তুত আছি। কীভাবে আপনাকে সাহায্য করতে পারি?</div>
         </div>
         <div class="chat-input-area">
             <input type="text" id="chatInput" placeholder="লিখুন...">
@@ -375,7 +376,7 @@
             function showPremiumCreator() {
                 document.getElementById('modal-body').innerHTML = `
                     <div class="premium-creator">
-                        <div class="creator-header"><div class="creator-avatar"><img src="https://i.postimg.cc/yNhjsYJ4/1771310158774_01.jpg"></div><div class="creator-name-premium">শামিউল ইসলাম বরসন</div><div class="creator-badge">Creator · DINISLAM</div></div>
+                        <div class="creator-header"><div class="creator-avatar"><img src="https://i.postimg.cc/yNhjsYJ4/1771310158774_01.jpg"></div><div class="creator-name-premium">শামিউল ইসলাম বর্ষন</div><div class="creator-badge">Creator · DINISLAM</div></div>
                         <div class="creator-content">
                             <div class="creator-quote">“Building meaningful digital experiences for the Ummah”</div>
                             <div class="creator-message"><p><span class="creator-highlight">DINISLAM</span> is designed as a compact guide for Ramadan — Sehri/Iftar times, duas, tasbih and beneficial videos.</p><p>May this effort be a source of blessings.</p></div>
@@ -386,7 +387,7 @@
                     </div>`;
             }
             window.showVideoSearch = function() {
-                document.getElementById('modal-body').innerHTML = `<h3>ইসলামিক ভিডিও</h3><div style="display:flex;gap:10px;margin:20px 0;"><input type="text" id="searchQuery" class="input-line" placeholder="যেমন: রোজার নিয়ম, দোয়া"><button class="btn" style="width:auto;padding:14px 25px;" onclick="searchVideos()">খুঁজুন</button></div><div id="videoResults" class="video-grid"></div><div id="videoPlayer" style="display:none;"><div id="playerContainer"></div><button class="btn" onclick="showVideoSearch()">ফিরে যান</button></div>`;
+                document.getElementById('modal-body').innerHTML = `<h3>ইসলামিক ভিডিও সার্চ করুন</h3><div style="display:flex;gap:10px;margin:20px 0;"><input type="text" id="searchQuery" class="input-line" placeholder="যেমন: রোজার নিয়ম, দোয়া"><button class="btn" style="width:auto;padding:14px 25px;" onclick="searchVideos()">খুঁজুন</button></div><div id="videoResults" class="video-grid"></div><div id="videoPlayer" style="display:none;"><div id="playerContainer"></div><button class="btn" onclick="showVideoSearch()">ফিরে যান</button></div>`;
             };
             window.searchVideos = function() {
                 let q = document.getElementById('searchQuery').value; if(!q) return;
