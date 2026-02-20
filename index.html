@@ -57,7 +57,9 @@
         .dark-mode .video-item,
         .dark-mode .tasbih-circle,
         .dark-mode .salah-item-modern,
-        .dark-mode .video-search-container {
+        .dark-mode .video-search-container,
+        .dark-mode .hadith-card,
+        .dark-mode .asma-item {
             background: #1e3342;
             color: #dae8f2;
             border-color: #314b5c;
@@ -68,6 +70,7 @@
             --primary-soft: #2f8495;
             --primary-mist: #c6e3ea;
             --accent-terra: #b35f38;
+            --accent-gold: #c9a45b;
             --paper-light: #fbfdff;
             --paper-warm: #f4f7fb;
             --text-main: #1d3342;
@@ -199,17 +202,17 @@
             opacity: 0.8;
         }
 
-        /* Dashboard Grid */
+        /* Dashboard Grid - 8 items */
         .dashboard-grid {
             display: grid;
-            grid-template-columns: repeat(6, 1fr);
-            gap: 10px;
+            grid-template-columns: repeat(8, 1fr);
+            gap: 8px;
             margin: 25px 0 40px;
         }
         .dashboard-card {
             background: white;
             border-radius: 22px;
-            padding: 18px 4px;
+            padding: 16px 4px;
             text-align: center;
             box-shadow: 0 8px 18px -12px rgba(30,60,70,0.15);
             transition: transform 0.1s, box-shadow 0.2s;
@@ -218,78 +221,103 @@
         }
         .dashboard-card:hover { transform: translateY(-3px); box-shadow: var(--shadow-real); }
         .card-icon {
-            font-size: 26px;
+            font-size: 24px;
             color: var(--primary-soft);
-            margin-bottom: 5px;
+            margin-bottom: 4px;
         }
         .card-title {
             font-weight: 600;
-            font-size: 12px;
+            font-size: 11px;
             color: var(--text-main);
         }
 
-        /* Side Menu */
+        /* ----- MODERN SIDE MENU ----- */
         .side-menu-button {
             position: fixed;
             bottom: 20px;
             right: 20px;
-            width: 48px;
-            height: 48px;
-            border-radius: 24px;
-            background: white;
+            width: 52px;
+            height: 52px;
+            border-radius: 30px;
+            background: linear-gradient(145deg, #ffffff, #f0f5fd);
             display: flex;
             flex-direction: column;
             align-items: center;
             justify-content: center;
-            gap: 4px;
+            gap: 5px;
             cursor: pointer;
             z-index: 90;
-            box-shadow: 0 10px 18px -10px rgba(20,60,70,0.4);
-            border: 1px solid rgba(200,215,225,0.8);
+            box-shadow: 0 10px 20px -8px rgba(20,60,70,0.4);
+            border: 1px solid rgba(255,255,255,0.9);
+            transition: all 0.2s;
+        }
+        .side-menu-button:hover {
+            transform: scale(1.05);
+            box-shadow: 0 15px 25px -10px #185e6b;
         }
         .side-menu-button span {
-            width: 20px;
-            height: 2.5px;
+            width: 22px;
+            height: 3px;
             background: var(--primary-deep);
-            border-radius: 4px;
+            border-radius: 6px;
+            transition: 0.2s;
+        }
+        .side-menu-button:hover span {
+            background: var(--primary-soft);
         }
         .side-options {
             position: fixed;
-            bottom: 76px;
+            bottom: 80px;
             right: 20px;
             background: white;
-            border-radius: 28px;
-            padding: 8px 6px;
+            border-radius: 36px;
+            padding: 12px 8px;
             display: none;
             flex-direction: column;
-            gap: 4px;
+            gap: 8px;
             z-index: 91;
-            min-width: 140px;
-            box-shadow: 0 20px 30px -14px rgba(20,50,60,0.35);
-            border: 1px solid rgba(210,225,235,0.8);
+            min-width: 170px;
+            box-shadow: 0 25px 40px -18px #1a4a58;
+            border: 1px solid rgba(220,235,245,0.8);
+            backdrop-filter: blur(10px);
         }
         .side-option {
-            padding: 10px 16px;
+            padding: 12px 18px;
             border: none;
-            border-radius: 26px;
-            font-weight: 500;
-            font-size: 13px;
+            border-radius: 30px;
+            font-weight: 600;
+            font-size: 14px;
             cursor: pointer;
-            background: #ecf3f9;
-            color: #1c3c4a;
+            background: #f0f7fe;
+            color: var(--primary-deep);
             text-align: left;
+            display: flex;
+            align-items: center;
+            transition: 0.2s;
         }
-        .side-option i { margin-right: 12px; width: 18px; }
+        .side-option i {
+            margin-right: 14px;
+            width: 20px;
+            font-size: 16px;
+        }
+        .side-option:hover {
+            background: var(--primary-deep);
+            color: white;
+            transform: translateX(-3px);
+        }
+        .side-option.logout:hover {
+            background: #c44b4b;
+        }
 
-        /* Chat Button */
+        /* Chat Button - Renamed to Deenify */
         .chat-button {
             position: fixed;
             bottom: 20px;
-            right: 78px;
-            width: 48px;
-            height: 48px;
-            border-radius: 24px;
-            background: var(--primary-deep);
+            right: 84px;
+            width: 52px;
+            height: 52px;
+            border-radius: 30px;
+            background: linear-gradient(145deg, var(--primary-deep), #1d7280);
             color: white;
             display: flex;
             flex-direction: column;
@@ -298,27 +326,32 @@
             cursor: pointer;
             z-index: 90;
             border: 2px solid white;
-            box-shadow: 0 8px 16px -8px #185e6b;
+            box-shadow: 0 10px 20px -8px #185e6b;
+            transition: 0.2s;
         }
-        .chat-button i { font-size: 20px; }
-        .chat-button span { font-size: 8px; font-weight: 600; margin-top: 2px; }
+        .chat-button:hover {
+            transform: scale(1.05);
+            background: var(--primary-soft);
+        }
+        .chat-button i { font-size: 22px; }
+        .chat-button span { font-size: 9px; font-weight: 600; margin-top: 2px; }
 
         .chat-window {
             position: fixed;
-            bottom: 76px;
+            bottom: 80px;
             right: 20px;
             width: 320px;
             height: 460px;
             background: white;
-            border-radius: 32px;
+            border-radius: 36px;
             display: none;
             flex-direction: column;
             overflow: hidden;
             z-index: 92;
-            box-shadow: 0 30px 40px -20px #1d4b58;
+            box-shadow: 0 30px 45px -20px #1a4f5c;
         }
 
-        /* Modal - compact size */
+        /* Modal */
         .modal {
             display: none;
             position: fixed;
@@ -333,9 +366,9 @@
         .modal-content {
             background: white;
             border-radius: 48px;
-            max-width: 500px;
+            max-width: 540px;
             width: 100%;
-            max-height: 90vh;
+            max-height: 85vh;
             overflow-y: auto;
             padding: 24px 22px;
             position: relative;
@@ -359,12 +392,168 @@
         }
         .modal-close:hover { background: #dae2ec; }
 
-        /* ----- COMPACT VIDEO SECTION (everything visible at once) ----- */
+        /* ----- ASMAUL HUSNA SECTION ----- */
+        .asma-section {
+            background: linear-gradient(145deg, #fefcf5, #fbf7ed);
+            border-radius: 36px;
+            padding: 16px 14px;
+        }
+        .asma-header {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 18px;
+            background: var(--accent-gold);
+            color: white;
+            padding: 12px 18px;
+            border-radius: 40px;
+        }
+        .asma-header i {
+            font-size: 24px;
+        }
+        .asma-header h3 {
+            font-size: 18px;
+            font-weight: 600;
+        }
+        .asma-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 10px;
+            max-height: 55vh;
+            overflow-y: auto;
+            padding-right: 5px;
+        }
+        .asma-item {
+            background: white;
+            border-radius: 24px;
+            padding: 14px 12px;
+            border-left: 5px solid var(--accent-gold);
+            box-shadow: 0 5px 12px -10px #1b5b68;
+        }
+        .asma-arabic {
+            font-family: 'Noto Naskh Arabic', serif;
+            font-size: 20px;
+            direction: rtl;
+            color: var(--primary-deep);
+            margin-bottom: 6px;
+        }
+        .asma-translit {
+            font-weight: 600;
+            font-size: 15px;
+            color: var(--accent-terra);
+            margin-bottom: 4px;
+        }
+        .asma-meaning {
+            font-size: 13px;
+            color: var(--text-main);
+        }
+
+        /* ----- HADITH SECTION (COMPLETE 50 HADITH) ----- */
+        .hadith-section {
+            background: linear-gradient(145deg, #fffbf5, #fef9f0);
+            border-radius: 36px;
+            padding: 16px 14px;
+        }
+        .hadith-header {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 18px;
+            background: var(--primary-deep);
+            color: white;
+            padding: 12px 18px;
+            border-radius: 40px;
+        }
+        .hadith-header i {
+            font-size: 22px;
+        }
+        .hadith-header h3 {
+            font-size: 18px;
+            font-weight: 600;
+        }
+        .hadith-grid {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            max-height: 55vh;
+            overflow-y: auto;
+            padding-right: 5px;
+        }
+        .hadith-card {
+            background: white;
+            border-radius: 24px;
+            padding: 16px;
+            border-left: 6px solid var(--accent-terra);
+            box-shadow: 0 6px 14px -10px #1b5b68;
+        }
+        .hadith-number {
+            font-weight: 700;
+            color: var(--primary-deep);
+            margin-bottom: 6px;
+            font-size: 15px;
+        }
+        .hadith-arabic {
+            font-family: 'Noto Naskh Arabic', serif;
+            font-size: 17px;
+            direction: rtl;
+            margin: 8px 0;
+            color: #1e4a58;
+            line-height: 1.6;
+        }
+        .hadith-bangla {
+            font-size: 14px;
+            color: var(--text-main);
+            margin-bottom: 8px;
+            line-height: 1.5;
+        }
+        .hadith-reference {
+            font-size: 12px;
+            color: var(--primary-soft);
+            border-top: 1px dashed #d0e0e8;
+            padding-top: 8px;
+            margin-top: 6px;
+            font-style: italic;
+        }
+
+        /* ----- DUA SECTION (ALL 30 DUAS) ----- */
+        .dua-list {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            max-height: 60vh;
+            overflow-y: auto;
+            padding-right: 5px;
+        }
+        .dua-item {
+            background: #f3f8fd;
+            border-radius: 24px;
+            padding: 14px 16px;
+            border-left: 5px solid var(--accent-terra);
+        }
+        .dua-title {
+            font-size: 15px;
+            font-weight: 700;
+            color: var(--primary-deep);
+            margin-bottom: 6px;
+        }
+        .dua-arabic {
+            font-family: 'Noto Naskh Arabic', serif;
+            font-size: 18px;
+            direction: rtl;
+            margin: 8px 0;
+            color: #1e4a58;
+        }
+        .dua-bangla {
+            font-size: 14px;
+            color: var(--text-main);
+            line-height: 1.5;
+        }
+
+        /* Video Section */
         .video-section {
             background: linear-gradient(145deg, #ffffff, #f5faff);
             border-radius: 36px;
             padding: 16px 14px;
-            box-shadow: inset 0 1px 5px rgba(255,255,255,0.8), 0 10px 20px -15px #1b5b68;
         }
         .video-header {
             display: flex;
@@ -482,7 +671,7 @@
             height: 160px;
         }
 
-        /* ----- COMPACT SALAH SECTION (all visible without scroll) ----- */
+        /* Salah Section */
         .salah-section {
             background: linear-gradient(135deg, #f4fcff, #e8f2fa);
             border-radius: 36px;
@@ -501,9 +690,6 @@
             display: flex;
             align-items: center;
             gap: 6px;
-        }
-        .salah-header h3 i {
-            font-size: 18px;
         }
         .salah-total-badge {
             background: white;
@@ -569,9 +755,6 @@
             align-items: center;
             gap: 3px;
         }
-        .salah-action-btn i {
-            font-size: 10px;
-        }
         .salah-action-btn:hover {
             background: var(--primary-soft);
             color: white;
@@ -597,7 +780,7 @@
             color: white;
         }
 
-        /* Zakat (compact) */
+        /* Zakat */
         .zakat-card {
             background: linear-gradient(145deg, #f6fbfe, #ecf3f9);
             border-radius: 30px;
@@ -650,7 +833,7 @@
             line-height: 1.2;
         }
 
-        /* Tasbih (compact) */
+        /* Tasbih (FIXED - 33 count cycle) */
         .tasbih-container {
             background: linear-gradient(145deg, #f9fcff, #edf4fa);
             border-radius: 36px;
@@ -752,7 +935,7 @@
             color: white;
         }
 
-        /* Schedule table, Dua (keep existing but compact) */
+        /* Schedule table */
         .schedule-table {
             width: 100%;
             border-collapse: collapse;
@@ -781,31 +964,6 @@
             cursor: pointer;
             font-size: 13px;
         }
-        .dua-list {
-            display: flex;
-            flex-direction: column;
-            gap: 8px;
-            max-height: 60vh;
-            overflow-y: auto;
-            padding-right: 5px;
-        }
-        .dua-item {
-            background: #f3f8fd;
-            border-radius: 20px;
-            padding: 12px 14px;
-            border-left: 4px solid var(--accent-terra);
-        }
-        .dua-title {
-            font-size: 14px;
-            font-weight: 700;
-        }
-        .dua-arabic {
-            font-family: 'Noto Naskh Arabic', serif;
-            font-size: 16px;
-            direction: rtl;
-            margin: 4px 0;
-        }
-        .dua-bangla { font-size: 13px; color: #385a6b; }
         .creator-message {
             background: #f2f7fa;
             border-radius: 24px;
@@ -818,14 +976,15 @@
         }
 
         @media (max-width: 650px) {
-            .dashboard-grid { grid-template-columns: repeat(3,1fr); }
+            .dashboard-grid { grid-template-columns: repeat(4, 1fr); }
             .salah-grid-modern { grid-template-columns: repeat(2,1fr); }
             .video-grid-modern { grid-template-columns: repeat(2, 1fr); }
+            .asma-grid { grid-template-columns: 1fr; }
         }
     </style>
 </head>
 <body>
-    <!-- LOGIN PAGE -->
+    <!-- LOGIN PAGE (no chat or menu) -->
     <div id="login-page" class="login-page" style="min-height:100vh; display:flex; align-items:center; justify-content:center; background:#e2ecf3;">
         <div class="login-card" style="background:rgba(255,255,255,0.8); backdrop-filter:blur(14px); border-radius:60px; padding:48px 40px; max-width:440px; width:100%;">
             <div style="text-align:center;">
@@ -858,7 +1017,7 @@
         </div>
     </div>
 
-    <!-- MAIN DASHBOARD -->
+    <!-- MAIN DASHBOARD (chat + side menu only appear here) -->
     <div id="dashboard" style="display:none;">
         <header class="header">
             <div class="header-content">
@@ -891,33 +1050,35 @@
             <div class="dashboard-grid">
                 <div class="dashboard-card" onclick="openModal('cal')"><div class="card-icon"><i class="fas fa-calendar-alt"></i></div><div class="card-title">সময়সূচী</div></div>
                 <div class="dashboard-card" onclick="openModal('dua')"><div class="card-icon"><i class="fas fa-hand-paper"></i></div><div class="card-title">দোয়া</div></div>
+                <div class="dashboard-card" onclick="openModal('asma')"><div class="card-icon"><i class="fas fa-star-and-crescent"></i></div><div class="card-title">আসমাউল হুসনা</div></div>
+                <div class="dashboard-card" onclick="openModal('hadith')"><div class="card-icon"><i class="fas fa-book-open"></i></div><div class="card-title">হাদিস</div></div>
                 <div class="dashboard-card" onclick="openModal('tas')"><div class="card-icon"><i class="fas fa-circle"></i></div><div class="card-title">তসবিহ</div></div>
                 <div class="dashboard-card" onclick="openModal('zak')"><div class="card-icon"><i class="fas fa-calculator"></i></div><div class="card-title">জাকাত</div></div>
                 <div class="dashboard-card" onclick="openModal('vid')"><div class="card-icon"><i class="fas fa-play-circle"></i></div><div class="card-title">ভিডিও</div></div>
                 <div class="dashboard-card" onclick="openModal('salah')"><div class="card-icon"><i class="fas fa-mosque"></i></div><div class="card-title">সালাত</div></div>
             </div>
         </div>
-    </div>
 
-    <!-- CHAT + SIDE MENU -->
-    <div class="chat-button" onclick="toggleChat()" id="chatButton"><i class="fas fa-comment"></i><span>ROVEX</span></div>
-    <div class="chat-window" id="chatWindow">
-        <div style="background:#185e6b; color:white; padding:18px; display:flex; justify-content:space-between;">
-            <span><i class="fas fa-robot"></i> ROVEX</span>
-            <span style="cursor:pointer; font-size:26px;" onclick="toggleChat()">×</span>
+        <!-- Chat and Side Menu (only visible here) - renamed to Deenify -->
+        <div class="chat-button" onclick="toggleChat()" id="chatButton"><i class="fas fa-comment"></i><span>Deenify</span></div>
+        <div class="chat-window" id="chatWindow">
+            <div style="background:#185e6b; color:white; padding:18px; display:flex; justify-content:space-between;">
+                <span><i class="fas fa-robot"></i> Deenify</span>
+                <span style="cursor:pointer; font-size:26px;" onclick="toggleChat()">×</span>
+            </div>
+            <div style="flex:1; padding:16px; overflow-y:auto; background:#f0f5fa;" id="chatMessages"></div>
+            <div style="display:flex; padding:14px; gap:6px; background:white;">
+                <input type="text" id="chatInput" placeholder="লিখুন..." style="flex:1; padding:12px 16px; border-radius:40px; border:1px solid #cbdae6;">
+                <button onclick="sendMessage()" style="background:#185e6b; color:white; border:none; width:48px; border-radius:40px;"><i class="fas fa-paper-plane"></i></button>
+            </div>
         </div>
-        <div style="flex:1; padding:16px; overflow-y:auto; background:#f0f5fa;" id="chatMessages"></div>
-        <div style="display:flex; padding:14px; gap:6px; background:white;">
-            <input type="text" id="chatInput" placeholder="লিখুন..." style="flex:1; padding:12px 16px; border-radius:40px; border:1px solid #cbdae6;">
-            <button onclick="sendMessage()" style="background:#185e6b; color:white; border:none; width:48px; border-radius:40px;"><i class="fas fa-paper-plane"></i></button>
-        </div>
-    </div>
 
-    <div class="side-menu-button" onclick="toggleSideOptions()"><span></span><span></span><span></span></div>
-    <div class="side-options" id="sideOptions">
-        <button class="side-option" onclick="toggleDarkMode()"><i class="fas fa-moon"></i> ডার্ক মোড</button>
-        <button class="side-option" onclick="openModal('settings')"><i class="fas fa-cog"></i> সেটিংস</button>
-        <button class="side-option" onclick="logout()"><i class="fas fa-sign-out-alt"></i> লগআউট</button>
+        <div class="side-menu-button" onclick="toggleSideOptions()"><span></span><span></span><span></span></div>
+        <div class="side-options" id="sideOptions">
+            <button class="side-option" onclick="toggleDarkMode()"><i class="fas fa-moon"></i> ডার্ক মোড</button>
+            <button class="side-option" onclick="openModal('settings')"><i class="fas fa-cog"></i> সেটিংস</button>
+            <button class="side-option logout" onclick="logout()"><i class="fas fa-sign-out-alt"></i> লগআউট</button>
+        </div>
     </div>
 
     <!-- MODAL -->
@@ -941,7 +1102,7 @@
                 'ময়মনসিংহ': {sehriBase: '04:48', iftarBase: '18:00'}
             };
 
-            // 30 Duas
+            // ===== 30 DUAS (COMPLETE) =====
             const allDuas = [
                 {t:"চাঁদ দেখার দোয়া", a:"اللَّهُمَّ أَهِلَّهُ عَلَيْنَا بِالْأَمْنِ وَالْإِيمَانِ", b:"হে আল্লাহ! চাঁদকে আমাদের জন্য নিরাপত্তা ও ঈমানের সাথে উদিত করুন।"},
                 {t:"রোজার নিয়ত", a:"نَوَيْتُ أَنْ أَصُومَ غَدًا لِلّٰهِ تَعَالَى", b:"আগামীকাল রমজানের রোজা রাখার নিয়ত করলাম।"},
@@ -975,15 +1136,172 @@
                 {t:"সালাম ফেরানোর দোয়া", a:"السَّلَامُ عَلَيْكُمْ وَرَحْمَةُ اللَّهِ", b:"আপনাদের প্রতি শান্তি ও রহমত বর্ষিত হোক।"}
             ];
 
-            // Tasbih State
+            // ===== 50 RAMADAN HADITH (COMPLETE) =====
+            const hadithList = [
+                {num:"১", title:"নিয়তের গুরুত্ব", arabic:"إِنَّمَا الأَعْمَالُ بِالنِّيَّاتِ", bangla:"সমস্ত কাজ নিয়তের উপর নির্ভরশীল।", ref:"Sahih al-Bukhari, হাদিস নং ১; Sahih Muslim, হাদিস নং ১৯০৭"},
+                {num:"২", title:"রমজানে ঈমান ও সওয়াবের আশায় রোজা", arabic:"مَنْ صَامَ رَمَضَانَ إِيمَانًا وَاحْتِسَابًا غُفِرَ لَهُ مَا تَقَدَّمَ مِنْ ذَنْبِهِ", bangla:"যে ব্যক্তি ঈমানের সাথে এবং সওয়াবের আশায় রমজান মাসে রোজা রাখে, তার পূর্বের গুনাহ ক্ষমা করা হয়।", ref:"Sahih al-Bukhari, হাদিস নং ৩৮; Sahih Muslim, হাদিস নং ৭৬০"},
+                {num:"৩", title:"রমজানে কিয়াম (তারাবীহ)", arabic:"مَنْ قَامَ رَمَضَانَ إِيمَانًا وَاحْتِسَابًا غُفِرَ لَهُ مَا تَقَدَّمَ مِنْ ذَنْبِهِ", bangla:"যে ব্যক্তি ঈমান ও সওয়াবের আশায় রমজানে (রাতে) দাঁড়ায়, তার পূর্বের গুনাহ ক্ষমা করা হয়।", ref:"Sahih al-Bukhari, হাদিস নং ২০০৯; Sahih Muslim, হাদিস নং ৭৫৯"},
+                {num:"৪", title:"জান্নাতের দরজা খোলা হয়", arabic:"إِذَا جَاءَ رَمَضَانُ فُتِّحَتْ أَبْوَابُ الجَنَّةِ", bangla:"রমজান এলে জান্নাতের দরজাগুলো খুলে দেওয়া হয়, জাহান্নামের দরজাগুলো বন্ধ করা হয় এবং শয়তানদের শৃঙ্খলিত করা হয়।", ref:"Sahih al-Bukhari, হাদিস নং ১৮৯৯; Sahih Muslim, হাদিস নং ১০৭৯"},
+                {num:"৫", title:"রোজা ঢালস্বরূপ", arabic:"الصِّيَامُ جُنَّةٌ", bangla:"রোজা একটি ঢাল।", ref:"Sahih al-Bukhari, হাদিস নং ১৯০৪; Sahih Muslim, হাদিস নং ১১৫১"},
+                {num:"৬", title:"রোজাদারের দুটি আনন্দ", arabic:"لِلصَّائِمِ فَرْحَتَانِ", bangla:"রোজাদারের জন্য দুটি আনন্দ রয়েছে—একটি ইফতারের সময় এবং অন্যটি তার রবের সাথে সাক্ষাতের সময়।", ref:"Sahih al-Bukhari, হাদিস নং ১৯০৪; Sahih Muslim, হাদিস নং ১১৫১"},
+                {num:"৭", title:"জান্নাতের রাইয়ান দরজা", arabic:"إِنَّ فِي الْجَنَّةِ بَابًا يُقَالُ لَهُ الرَّيَّانُ", bangla:"জান্নাতে একটি দরজা আছে যার নাম রাইয়ান, কিয়ামতের দিন তা দিয়ে রোজাদাররা প্রবেশ করবে।", ref:"Sahih al-Bukhari, হাদিস নং ১৮৯৬; Sahih Muslim, হাদিস নং ১১৫২"},
+                {num:"৮", title:"সাহরিতে বরকত", arabic:"تَسَحَّرُوا فَإِنَّ فِي السُّحُورِ بَرَكَةً", bangla:"সাহরি খাও, কারণ সাহরিতে বরকত রয়েছে।", ref:"Sahih al-Bukhari, হাদিস নং ১৯২৩; Sahih Muslim, হাদিস নং ১০৯৫"},
+                {num:"৯", title:"ইফতার তাড়াতাড়ি করা", arabic:"لاَ يَزَالُ النَّاسُ بِخَيْرٍ مَا عَجَّلُوا الفِطْرَ", bangla:"মানুষ ততদিন কল্যাণে থাকবে যতদিন তারা ইফতার তাড়াতাড়ি করবে।", ref:"Sahih al-Bukhari, হাদিস নং ১৯৫৭; Sahih Muslim, হাদিস নং ১০৯৮"},
+                {num:"১০", title:"লাইলাতুল কদর অনুসন্ধান", arabic:"تَحَرَّوْا لَيْلَةَ الْقَدْرِ فِي الْوِتْرِ مِنَ العَشْرِ الأَوَاخِرِ", bangla:"শেষ দশকের বিজোড় রাতগুলোতে লাইলাতুল কদর অনুসন্ধান কর।", ref:"Sahih al-Bukhari, হাদিস নং ২০১৭; Sahih Muslim, হাদিস নং ১১৬৯"},
+                {num:"১১", title:"লাইলাতুল কদরে ইবাদত", arabic:"مَنْ قَامَ لَيْلَةَ الْقَدْرِ إِيمَانًا وَاحْتِسَابًا غُفِرَ لَهُ مَا تَقَدَّمَ مِنْ ذَنْبِهِ", bangla:"যে ব্যক্তি ঈমান ও সওয়াবের আশায় লাইলাতুল কদরে ইবাদতে দাঁড়ায়, তার পূর্বের গুনাহ ক্ষমা করা হয়।", ref:"Sahih al-Bukhari, হাদিস নং ২০১৪; Sahih Muslim, হাদিস নং ৭৬০"},
+                {num:"১২", title:"রোজা আল্লাহর জন্য", arabic:"كُلُّ عَمَلِ ابْنِ آدَمَ لَهُ إِلَّا الصَّوْمَ فَإِنَّهُ لِي وَأَنَا أَجْزِي بِهِ", bangla:"আদম সন্তানের প্রত্যেক আমল তার নিজের জন্য, কিন্তু রোজা আমার জন্য; আর আমি নিজেই তার প্রতিদান দেব।", ref:"Sahih al-Bukhari, হাদিস নং ১৯০৪; Sahih Muslim, হাদিস নং ১১৫১"},
+                {num:"১৩", title:"মিথ্যা কথা পরিত্যাগ", arabic:"مَنْ لَمْ يَدَعْ قَوْلَ الزُّورِ وَالعَمَلَ بِهِ فَلَيْسَ لِلَّهِ حَاجَةٌ فِي أَنْ يَدَعَ طَعَامَهُ وَشَرَابَهُ", bangla:"যে ব্যক্তি মিথ্যা কথা ও সে অনুযায়ী কাজ পরিত্যাগ করে না, তার পানাহার ত্যাগ করার প্রতি আল্লাহর কোনো প্রয়োজন নেই।", ref:"Sahih al-Bukhari, হাদিস নং ১৯০৩"},
+                {num:"১৪", title:"ভুলে খেয়ে ফেললে", arabic:"إِذَا نَسِيَ فَأَكَلَ أَوْ شَرِبَ فَلْيُتِمَّ صَوْمَهُ فَإِنَّمَا أَطْعَمَهُ اللَّهُ وَسَقَاهُ", bangla:"কেউ যদি রোজা অবস্থায় ভুলে খেয়ে বা পান করে ফেলে, তবে সে তার রোজা পূর্ণ করবে; কারণ আল্লাহই তাকে খাইয়েছেন ও পান করিয়েছেন।", ref:"Sahih al-Bukhari, হাদিস নং ১৯৩৩; Sahih Muslim, হাদিস নং ১১৫৫"},
+                {num:"১৫", title:"ইতিকাফ", arabic:"كَانَ النَّبِيُّ ﷺ يَعْتَكِفُ فِي الْعَشْرِ الأَوَاخِرِ مِنْ رَمَضَانَ", bangla:"নবী ﷺ রমজানের শেষ দশকে ইতিকাফ করতেন।", ref:"Sahih al-Bukhari, হাদিস নং ২০২৬; Sahih Muslim, হাদিস নং ১১৭১"},
+                {num:"১৬", title:"সফরে রোজা", arabic:"لَيْسَ مِنَ الْبِرِّ الصَّوْمُ فِي السَّفَرِ", bangla:"সফরে (কষ্টকর অবস্থায়) রোজা রাখা সওয়াবের কাজ নয়।", ref:"Sahih al-Bukhari, হাদিস নং ১৯৪৬; Sahih Muslim, হাদিস নং ১১১৫"},
+                {num:"১৭", title:"রোজা ও কুরআন সুপারিশ করবে", arabic:"الصِّيَامُ وَالْقُرْآنُ يَشْفَعَانِ لِلْعَبْدِ يَوْمَ الْقِيَامَةِ", bangla:"রোজা ও কুরআন কিয়ামতের দিন বান্দার জন্য সুপারিশ করবে।", ref:"Musnad Ahmad, হাদিস নং ৬৬২৬ (সহিহ)"},
+                {num:"১৮", title:"রমজান ধৈর্যের মাস", arabic:"صَوْمُ شَهْرِ الصَّبْرِ وَثَلَاثَةُ أَيَّامٍ مِنْ كُلِّ شَهْرٍ صَوْمُ الدَّهْرِ", bangla:"ধৈর্যের মাস (রমজান) এবং প্রতি মাসে তিন দিন রোজা রাখা সারাবছর রোজা রাখার সমতুল্য।", ref:"Sunan an-Nasa'i, হাদিস নং ২৪০৮ (সহিহ)"},
+                {num:"১৯", title:"রোজাদারের দোয়া কবুল", arabic:"ثَلَاثَةٌ لَا تُرَدُّ دَعْوَتُهُمْ... وَالصَّائِمُ حَتَّى يُفْطِرَ", bangla:"তিন ব্যক্তির দোয়া প্রত্যাখ্যাত হয় না… আর রোজাদারের (দোয়া) ইফতার পর্যন্ত।", ref:"Sunan Ibn Majah, হাদিস নং ১৭৫২ (হাসান)"},
+                {num:"২০", title:"ইফতার করানোর ফজিলত", arabic:"مَنْ فَطَّرَ صَائِمًا كَانَ لَهُ مِثْلُ أَجْرِهِ غَيْرَ أَنَّهُ لَا يَنْقُصُ مِنْ أَجْرِ الصَّائِمِ شَيْئًا", bangla:"যে ব্যক্তি কোনো রোজাদারকে ইফতার করায়, সে তার সমপরিমাণ সওয়াব পায়; তবে রোজাদারের সওয়াব থেকে কিছুই কমানো হয় না।", ref:"Jami at-Tirmidhi, হাদিস নং ৮০৭ (সহিহ)"},
+                {num:"২১", title:"রমজান শুরু ও শেষ চাঁদ দেখে", arabic:"صُومُوا لِرُؤْيَتِهِ وَأَفْطِرُوا لِرُؤْيَتِهِ فَإِنْ غُمَّ عَلَيْكُمْ فَأَكْمِلُوا العِدَّةَ ثَلَاثِينَ", bangla:"তোমরা চাঁদ দেখে রোজা রাখ এবং চাঁদ দেখে ইফতার কর; আর যদি আকাশ মেঘাচ্ছন্ন হয় তবে ত্রিশ দিন পূর্ণ কর।", ref:"Sahih al-Bukhari, হাদিস নং ১৯০৯; Sahih Muslim, হাদিস নং ১০৮১"},
+                {num:"২২", title:"রমজান ২৯ দিনও হতে পারে", arabic:"الشَّهْرُ هَكَذَا وَهَكَذَا وَهَكَذَا", bangla:"মাস এভাবে, এভাবে, এভাবে— (অর্থাৎ কখনও ২৯ দিনও হয়)।", ref:"Sahih al-Bukhari, হাদিস নং ১৯১৩; Sahih Muslim, হাদিস নং ১০৮০"},
+                {num:"২৩", title:"রমজানে অধিক দান", arabic:"كَانَ رَسُولُ اللَّهِ ﷺ أَجْوَدَ النَّاسِ وَكَانَ أَجْوَدَ مَا يَكُونُ فِي رَمَضَانَ", bangla:"রাসূল ﷺ মানুষের মধ্যে সবচেয়ে দানশীল ছিলেন, আর রমজানে তিনি সবচেয়ে বেশি দানশীল হতেন।", ref:"Sahih al-Bukhari, হাদিস নং ৬"},
+                {num:"২৪", title:"জিবরীল (আ.) এর সাথে কুরআন পাঠ", arabic:"وَكَانَ جِبْرِيلُ يَلْقَاهُ فِي كُلِّ لَيْلَةٍ مِنْ رَمَضَانَ فَيُدَارِسُهُ الْقُرْآنَ", bangla:"রমজানের প্রতি রাতে জিবরীল (আ.) তাঁর সাথে সাক্ষাৎ করতেন এবং কুরআন পর্যালোচনা করতেন।", ref:"Sahih al-Bukhari, হাদিস নং ৬"},
+                {num:"২৫", title:"শেষ দশকে বেশি ইবাদত", arabic:"كَانَ النَّبِيُّ ﷺ إِذَا دَخَلَ العَشْرُ شَدَّ مِئْزَرَهُ وَأَحْيَا لَيْلَهُ وَأَيْقَظَ أَهْلَهُ", bangla:"শেষ দশক এলে নবী ﷺ কোমর বেঁধে নিতেন, রাত জাগতেন এবং পরিবারকে জাগাতেন।", ref:"Sahih al-Bukhari, হাদিস নং ২০২৪; Sahih Muslim, হাদিস নং ১১৭৪"},
+                {num:"২৬", title:"তারাবীহ জামাতে আদায়", arabic:"إِنَّهُ مَنْ قَامَ مَعَ الإِمَامِ حَتَّى يَنْصَرِفَ كُتِبَ لَهُ قِيَامُ لَيْلَةٍ", bangla:"যে ব্যক্তি ইমামের সাথে দাঁড়িয়ে নামাজ আদায় করে শেষ পর্যন্ত থাকে, তার জন্য পুরো রাতের কিয়ামের সওয়াব লেখা হয়।", ref:"Jami at-Tirmidhi, হাদিস নং ৮০৬ (সহিহ)"},
+                {num:"২৭", title:"রমজান রহমত, মাগফিরাত ও নাজাতের মাস", arabic:"أَوَّلُهُ رَحْمَةٌ وَأَوْسَطُهُ مَغْفِرَةٌ وَآخِرُهُ عِتْقٌ مِنَ النَّارِ", bangla:"এর প্রথমাংশ রহমত, মধ্যাংশ মাগফিরাত এবং শেষাংশ জাহান্নাম থেকে মুক্তি।", ref:"Sunan al-Bayhaqi, শু‘আবুল ঈমান (সনদে দুর্বলতা রয়েছে)"},
+                {num:"২৮", title:"উত্তম রোজা", arabic:"أَفْضَلُ الصِّيَامِ بَعْدَ رَمَضَانَ شَهْرُ اللَّهِ الْمُحَرَّمُ", bangla:"রমজানের পর সর্বোত্তম রোজা হলো আল্লাহর মাস মুহাররম।", ref:"Sahih Muslim, হাদিস নং ১১৬৩"},
+                {num:"২৯", title:"রমজান কুরআন নাজিলের মাস", arabic:"إِذَا دَخَلَ رَمَضَانُ فُتِحَتْ أَبْوَابُ الرَّحْمَةِ", bangla:"রমজান এলে রহমতের দরজাগুলো খুলে দেওয়া হয়।", ref:"Sahih Muslim, হাদিস নং ১০৭৯"},
+                {num:"৩০", title:"রোজা ও নৈতিকতা", arabic:"فَإِذَا كَانَ يَوْمُ صَوْمِ أَحَدِكُمْ فَلَا يَرْفُثْ وَلَا يَصْخَبْ", bangla:"তোমাদের কারও রোজার দিন হলে সে যেন অশ্লীল কথা ও ঝগড়া না করে।", ref:"Sahih al-Bukhari, হাদিস নং ১৯০৪; Sahih Muslim, হাদিস নং ১১৫১"},
+                {num:"৩১", title:"শেষ দশকে ইতিকাফ অব্যাহত রাখা", arabic:"كَانَ النَّبِيُّ ﷺ يَعْتَكِفُ الْعَشْرَ الأَوَاخِرَ مِنْ رَمَضَانَ حَتَّى تَوَفَّاهُ اللَّهُ", bangla:"নবী ﷺ মৃত্যুর আগ পর্যন্ত রমজানের শেষ দশকে ইতিকাফ করতেন।", ref:"Sahih al-Bukhari, হাদিস নং ২০২৬; Sahih Muslim, হাদিস নং ১১৭২"},
+                {num:"৩২", title:"লাইলাতুল কদরের দোয়া", arabic:"اللَّهُمَّ إِنَّكَ عَفُوٌّ تُحِبُّ العَفْوَ فَاعْفُ عَنِّي", bangla:"হে আল্লাহ, আপনি ক্ষমাশীল, ক্ষমা করতে ভালোবাসেন, তাই আমাকে ক্ষমা করুন।", ref:"Jami at-Tirmidhi, হাদিস নং ৩৫১৩ (সহিহ)"},
+                {num:"৩৩", title:"রমজানে উমরাহ", arabic:"عُمْرَةٌ فِي رَمَضَانَ تَعْدِلُ حَجَّةً", bangla:"রমজানে একটি উমরাহ আদায় করা হজের সমতুল্য।", ref:"Sahih al-Bukhari, হাদিস নং ১৭৮২; Sahih Muslim, হাদিস নং ১২৫৬"},
+                {num:"৩৪", title:"রোজা ভঙ্গের কাফফারা", arabic:"فَأَمَرَهُ أَنْ يُكَفِّرَ بِعِتْقِ رَقَبَةٍ أَوْ صِيَامِ شَهْرَيْنِ أَوْ إِطْعَامِ سِتِّينَ مِسْكِينًا", bangla:"এক ব্যক্তি রমজানে সহবাস করলে নবী ﷺ তাকে কাফফারা নির্দেশ দেন—একজন দাস মুক্ত করা, না পারলে দুই মাস ধারাবাহিক রোজা, না পারলে ৬০ জন মিসকিনকে খাদ্যদান।", ref:"Sahih al-Bukhari, হাদিস নং ১৯৩৬; Sahih Muslim, হাদিস নং ১১১১"},
+                {num:"৩৫", title:"ইফতারের দোয়া", arabic:"ذَهَبَ الظَّمَأُ وَابْتَلَّتِ العُرُوقُ وَثَبَتَ الأَجْرُ إِنْ شَاءَ اللَّهُ", bangla:"পিপাসা দূর হলো, শিরাগুলো সিক্ত হলো এবং ইনশাআল্লাহ সওয়াব স্থির হলো।", ref:"Sunan Abi Dawud, হাদিস নং ২৩৫৭ (হাসান)"},
+                {num:"৩৬", title:"রোজা রেখে অশ্লীলতা বর্জন", arabic:"فَإِنْ سَابَّهُ أَحَدٌ أَوْ قَاتَلَهُ فَلْيَقُلْ إِنِّي صَائِمٌ", bangla:"কেউ তাকে গালি দিলে বা ঝগড়া করতে এলে সে বলবে—আমি রোজাদার।", ref:"Sahih al-Bukhari, হাদিস নং ১৯০৪; Sahih Muslim, হাদিস নং ১১৫১"},
+                {num:"৩৭", title:"নবী ﷺ কখন ইফতার করতেন", arabic:"كَانَ رَسُولُ اللَّهِ ﷺ يُفْطِرُ عَلَى رُطَبَاتٍ قَبْلَ أَنْ يُصَلِّيَ", bangla:"রাসূল ﷺ নামাজের আগে কয়েকটি খেজুর দিয়ে ইফতার করতেন।", ref:"Sunan Abi Dawud, হাদিস নং ২৩৫৬ (সহিহ)"},
+                {num:"৩৮", title:"সিয়াম ও জাহান্নাম থেকে দূরত্ব", arabic:"مَنْ صَامَ يَوْمًا فِي سَبِيلِ اللَّهِ بَاعَدَ اللَّهُ وَجْهَهُ عَنِ النَّارِ سَبْعِينَ خَرِيفًا", bangla:"যে ব্যক্তি আল্লাহর পথে একদিন রোজা রাখে, আল্লাহ তার মুখমণ্ডলকে জাহান্নাম থেকে সত্তর বছরের দূরত্বে রাখবেন।", ref:"Sahih al-Bukhari, হাদিস নং ২৮৪০; Sahih Muslim, হাদিস নং ১১৫৩"},
+                {num:"৩৯", title:"তারাবীহের সূচনা", arabic:"أَنَّ النَّبِيَّ ﷺ صَلَّى بِهِمْ لَيْلًا ثُمَّ تَخَلَّفَ", bangla:"নবী ﷺ কয়েক রাত সাহাবিদের নিয়ে কিয়ামুল লাইল আদায় করেন, পরে ফরজ হয়ে যাওয়ার আশঙ্কায় তা নিয়মিত জামাতে চালু রাখেননি।", ref:"Sahih al-Bukhari, হাদিস নং ২০১২; Sahih Muslim, হাদিস নং ৭৬১"},
+                {num:"৪০", title:"শাওয়ালের ছয় রোজা", arabic:"مَنْ صَامَ رَمَضَانَ ثُمَّ أَتْبَعَهُ سِتًّا مِنْ شَوَّالٍ كَانَ كَصِيَامِ الدَّهْرِ", bangla:"যে ব্যক্তি রমজান রোজা রাখে, তারপর শাওয়ালের ছয় দিন রোজা রাখে, সে যেন সারাবছর রোজা রাখল।", ref:"Sahih Muslim, হাদিস নং ১১৬৪"},
+                {num:"৪১", title:"রোজা ও ধৈর্য", arabic:"الصِّيَامُ نِصْفُ الصَّبْرِ", bangla:"রোজা হলো ধৈর্যের অর্ধেক।", ref:"Jami at-Tirmidhi, হাদিস নং ৩৫১৯ (হাসান)"},
+                {num:"৪২", title:"রোজা ও তাকওয়া", arabic:"الصِّيَامُ جُنَّةٌ يَسْتَجِنُّ بِهَا العَبْدُ مِنَ النَّارِ", bangla:"রোজা এমন ঢাল, যার মাধ্যমে বান্দা জাহান্নাম থেকে আত্মরক্ষা করে।", ref:"Musnad Ahmad, হাদিস নং ১৫২৯৫ (সহিহ)"},
+                {num:"৪৩", title:"সাহরি ও আহলে কিতাবের পার্থক্য", arabic:"فَصْلُ مَا بَيْنَ صِيَامِنَا وَصِيَامِ أَهْلِ الكِتَابِ أَكْلَةُ السَّحَرِ", bangla:"আমাদের রোজা ও আহলে কিতাবের রোজার পার্থক্য হলো সাহরি খাওয়া।", ref:"Sahih Muslim, হাদিস নং ১০৯৬"},
+                {num:"৪৪", title:"রোজা কিয়ামতের দিন সুপারিশ করবে", arabic:"يَقُولُ الصِّيَامُ أَيْ رَبِّ إِنِّي مَنَعْتُهُ الطَّعَامَ وَالشَّهْوَةَ... فَشَفِّعْنِي فِيهِ", bangla:"রোজা বলবে—হে রব, আমি তাকে পানাহার ও কামনা থেকে বিরত রেখেছিলাম, তাই আমার সুপারিশ কবুল করুন।", ref:"Musnad Ahmad, হাদিস নং ৬৬২৬ (সহিহ)"},
+                {num:"৪৫", title:"রোজা ভঙ্গের গুনাহ", arabic:"مَنْ أَفْطَرَ يَوْمًا مِنْ رَمَضَانَ مِنْ غَيْرِ رُخْصَةٍ وَلَا مَرَضٍ لَمْ يَقْضِهِ صَوْمُ الدَّهْرِ", bangla:"যে ব্যক্তি রমজানের একদিন রোজা বৈধ অজুহাত ছাড়া ভঙ্গ করে, সারা জীবন রোজা রাখলেও তার সমপরিমাণ হবে না।", ref:"Sunan Abi Dawud, হাদিস নং ২৩৯৬ (দুর্বল সনদ)"},
+                {num:"৪৬", title:"রোজাদারের মুখের গন্ধ", arabic:"لَخُلُوفُ فَمِ الصَّائِمِ أَطْيَبُ عِنْدَ اللَّهِ مِنْ رِيحِ المِسْكِ", bangla:"রোজাদারের মুখের গন্ধ আল্লাহর কাছে মিসকের সুগন্ধির চেয়েও প্রিয়।", ref:"Sahih al-Bukhari, হাদিস নং ১৯০৪; Sahih Muslim, হাদিস নং ১১৫১"},
+                {num:"৪৭", title:"কুরআন তিলাওয়াতের ফজিলত", arabic:"اقْرَؤُوا الْقُرْآنَ فَإِنَّهُ يَأْتِي يَوْمَ القِيَامَةِ شَفِيعًا لِأَصْحَابِهِ", bangla:"তোমরা কুরআন তিলাওয়াত কর; কারণ কিয়ামতের দিন এটি তার পাঠকারীদের জন্য সুপারিশকারী হবে।", ref:"Sahih Muslim, হাদিস নং ৮০৪"},
+                {num:"৪৮", title:"উত্তম সাদাকাহ", arabic:"أَفْضَلُ الصَّدَقَةِ صَدَقَةٌ فِي رَمَضَانَ", bangla:"সর্বোত্তম সদকা হলো রমজানের সদকা।", ref:"Jami at-Tirmidhi, হাদিস নং ৬৬৩ (হাসান)"},
+                {num:"৪৯", title:"রমজানে রহমতের আহ্বান", arabic:"يَا بَاغِيَ الخَيْرِ أَقْبِلْ وَيَا بَاغِيَ الشَّرِّ أَقْصِرْ", bangla:"হে কল্যাণের অন্বেষী, এগিয়ে আস; হে অকল্যাণের অন্বেষী, বিরত হও।", ref:"Jami at-Tirmidhi, হাদিস নং ৬৮২ (হাসান)"},
+                {num:"৫০", title:"জান্নাতের রাইয়ান দরজা", arabic:"إِنَّ فِي الجَنَّةِ بَابًا يُقَالُ لَهُ الرَّيَّانُ يَدْخُلُ مِنْهُ الصَّائِمُونَ", bangla:"জান্নাতে ‘রাইয়ান’ নামে একটি দরজা আছে; রোজাদাররা তা দিয়ে প্রবেশ করবে।", ref:"Sahih al-Bukhari, হাদিস নং ১৮৯৬; Sahih Muslim, হাদিস নং ১১৫২"}
+            ];
+
+            // ===== 99 ASMAUL HUSNA =====
+            const asmaList = [
+                {ar:"الرَّحْمٰنُ", trans:"আর-রহমান", meaning:"পরম করুণাময়"},
+                {ar:"الرَّحِيمُ", trans:"আর-রহীম", meaning:"অতি দয়ালু"},
+                {ar:"الْمَلِكُ", trans:"আল-মালিক", meaning:"সর্বময় অধিপতি"},
+                {ar:"الْقُدُّوسُ", trans:"আল-কুদ্দুস", meaning:"অতি পবিত্র"},
+                {ar:"السَّلَامُ", trans:"আস-সালাম", meaning:"শান্তিদাতা"},
+                {ar:"الْمُؤْمِنُ", trans:"আল-মু’মিন", meaning:"নিরাপত্তাদানকারী"},
+                {ar:"الْمُهَيْمِنُ", trans:"আল-মুহাইমিন", meaning:"রক্ষক ও তত্ত্বাবধায়ক"},
+                {ar:"الْعَزِيزُ", trans:"আল-আযীয", meaning:"পরাক্রমশালী"},
+                {ar:"الْجَبَّارُ", trans:"আল-জাব্বার", meaning:"মহাপরাক্রমশালী"},
+                {ar:"الْمُتَكَبِّرُ", trans:"আল-মুতাকাব্বির", meaning:"মহিমান্বিত"},
+                {ar:"الْخَالِقُ", trans:"আল-খালিক", meaning:"সৃষ্টিকর্তা"},
+                {ar:"الْبَارِئُ", trans:"আল-বারি", meaning:"উদ্ভাবনকারী"},
+                {ar:"الْمُصَوِّرُ", trans:"আল-মুসাওয়ির", meaning:"আকৃতি দানকারী"},
+                {ar:"الْغَفَّارُ", trans:"আল-গফ্ফার", meaning:"অতিশয় ক্ষমাশীল"},
+                {ar:"الْقَهَّارُ", trans:"আল-কাহ্হার", meaning:"মহাপরাক্রমশালী"},
+                {ar:"الْوَهَّابُ", trans:"আল-ওয়াহ্হাব", meaning:"দানশীল"},
+                {ar:"الرَّزَّاقُ", trans:"আর-রজ্জাক", meaning:"রিযিকদাতা"},
+                {ar:"الْفَتَّاحُ", trans:"আল-ফাত্তাহ", meaning:"বিজয়দানকারী"},
+                {ar:"الْعَلِيمُ", trans:"আল-আলীম", meaning:"সর্বজ্ঞ"},
+                {ar:"الْقَابِضُ", trans:"আল-কাবিদ", meaning:"সংকুচনকারী"},
+                {ar:"الْبَاسِطُ", trans:"আল-বাসিত", meaning:"প্রশস্তকারী"},
+                {ar:"الْخَافِضُ", trans:"আল-খাফিদ", meaning:"অবনতকারী"},
+                {ar:"الرَّافِعُ", trans:"আর-রাফি", meaning:"উন্নতকারী"},
+                {ar:"الْمُعِزُّ", trans:"আল-মু‘ইয", meaning:"সম্মানদানকারী"},
+                {ar:"الْمُذِلُّ", trans:"আল-মুযিল", meaning:"অপমানকারী"},
+                {ar:"السَّمِيعُ", trans:"আস-সামী‘", meaning:"সর্বশ্রোতা"},
+                {ar:"الْبَصِيرُ", trans:"আল-বাসীর", meaning:"সর্বদ্রষ্টা"},
+                {ar:"الْحَكَمُ", trans:"আল-হাকাম", meaning:"বিচারক"},
+                {ar:"الْعَدْلُ", trans:"আল-আদল", meaning:"ন্যায়পরায়ণ"},
+                {ar:"اللَّطِيفُ", trans:"আল-লতীফ", meaning:"অতি সূক্ষ্মদর্শী"},
+                {ar:"الْخَبِيرُ", trans:"আল-খাবীর", meaning:"সর্বজ্ঞ"},
+                {ar:"الْحَلِيمُ", trans:"আল-হালীম", meaning:"পরম সহনশীল"},
+                {ar:"الْعَظِيمُ", trans:"আল-আযীম", meaning:"মহান"},
+                {ar:"الْغَفُورُ", trans:"আল-গফুর", meaning:"ক্ষমাশীল"},
+                {ar:"الشَّكُورُ", trans:"আশ-শাকুর", meaning:"গুণগ্রাহী"},
+                {ar:"الْعَلِيُّ", trans:"আল-আলী", meaning:"সর্বোচ্চ"},
+                {ar:"الْكَبِيرُ", trans:"আল-কাবীর", meaning:"মহান"},
+                {ar:"الْحَفِيظُ", trans:"আল-হাফীয", meaning:"সংরক্ষণকারী"},
+                {ar:"الْمُقِيتُ", trans:"আল-মুকীত", meaning:"শক্তিদাতা"},
+                {ar:"الْحسِيبُ", trans:"আল-হাসীব", meaning:"হিসাবগ্রহণকারী"},
+                {ar:"الْجَلِيلُ", trans:"আল-জালীল", meaning:"মহিমান্বিত"},
+                {ar:"الْكَرِيمُ", trans:"আল-করীম", meaning:"দয়ালু ও সম্মানিত"},
+                {ar:"الرَّقِيبُ", trans:"আর-রকীব", meaning:"পর্যবেক্ষণকারী"},
+                {ar:"الْمُجِيبُ", trans:"আল-মুজীব", meaning:"দোয়া কবুলকারী"},
+                {ar:"الْوَاسِعُ", trans:"আল-ওয়াসি‘", meaning:"সর্বব্যাপী"},
+                {ar:"الْحَكِيمُ", trans:"আল-হাকীম", meaning:"প্রজ্ঞাময়"},
+                {ar:"الْوَدُودُ", trans:"আল-ওয়াদুদ", meaning:"পরম স্নেহশীল"},
+                {ar:"الْمَجِيدُ", trans:"আল-মাজীদ", meaning:"মহিমান্বিত"},
+                {ar:"الْبَاعِثُ", trans:"আল-বা‘ইস", meaning:"পুনরুত্থানকারী"},
+                {ar:"الشَّهِيدُ", trans:"আশ-শাহীদ", meaning:"সর্বসাক্ষী"},
+                {ar:"الْحَقُّ", trans:"আল-হক", meaning:"সত্য"},
+                {ar:"الْوَكِيلُ", trans:"আল-ওকীল", meaning:"কর্মবিধায়ক"},
+                {ar:"الْقَوِيُّ", trans:"আল-কাওয়ী", meaning:"শক্তিশালী"},
+                {ar:"الْمَتِينُ", trans:"আল-মাতীন", meaning:"সুদৃঢ়"},
+                {ar:"الْوَلِيُّ", trans:"আল-ওলী", meaning:"অভিভাবক"},
+                {ar:"الْحَمِيدُ", trans:"আল-হামীদ", meaning:"প্রশংসিত"},
+                {ar:"الْمُحْصِي", trans:"আল-মুহসী", meaning:"পরিমাপক"},
+                {ar:"الْمُبْدِئُ", trans:"আল-মুবদি", meaning:"সৃষ্টির সূচনাকারী"},
+                {ar:"الْمُعِيدُ", trans:"আল-মু‘ঈদ", meaning:"পুনরাবৃত্তিকারী"},
+                {ar:"الْمُحْيِي", trans:"আল-মুহই", meaning:"জীবনদানকারী"},
+                {ar:"الْمُمِيتُ", trans:"আল-মুমীত", meaning:"মৃত্যুদাতা"},
+                {ar:"الْحَيُّ", trans:"আল-হাইয়্য", meaning:"চিরঞ্জীব"},
+                {ar:"الْقَيُّومُ", trans:"আল-কাইয়্যূম", meaning:"চিরস্থায়ী"},
+                {ar:"الْوَاجِدُ", trans:"আল-ওয়াজিদ", meaning:"প্রাচুর্যশালী"},
+                {ar:"الْمَاجِدُ", trans:"আল-মাজিদ", meaning:"সম্মানিত"},
+                {ar:"الْوَاحِدُ", trans:"আল-ওয়াহিদ", meaning:"একক"},
+                {ar:"الْأَحَدُ", trans:"আল-আহাদ", meaning:"অদ্বিতীয়"},
+                {ar:"الصَّمَدُ", trans:"আস-সামাদ", meaning:"অমুখাপেক্ষী"},
+                {ar:"الْقَادِرُ", trans:"আল-কাদির", meaning:"সর্বশক্তিমান"},
+                {ar:"الْمُقْتَدِرُ", trans:"আল-মুকতাদির", meaning:"সর্বক্ষমতাধর"},
+                {ar:"الْمُقَدِّمُ", trans:"আল-মুকাদ্দিম", meaning:"অগ্রসরকারী"},
+                {ar:"الْمُؤَخِّرُ", trans:"আল-মু’আখ্খির", meaning:"পশ্চাৎকারী"},
+                {ar:"الْأَوَّلُ", trans:"আল-আওয়াল", meaning:"সর্বপ্রথম"},
+                {ar:"الْآخِرُ", trans:"আল-আখির", meaning:"সর্বশেষ"},
+                {ar:"الظَّاهِرُ", trans:"আজ-জাহির", meaning:"প্রকাশ্য"},
+                {ar:"الْبَاطِنُ", trans:"আল-باطین", meaning:"অপ্রকাশ্য"},
+                {ar:"الْوَالِي", trans:"আল-ওয়ালী", meaning:"শাসনকর্তা"},
+                {ar:"الْمُتَعَالِي", trans:"আল-মুতা‘আলী", meaning:"সর্বোচ্চ মর্যাদাসম্পন্ন"},
+                {ar:"الْبَرُّ", trans:"আল-বার", meaning:"পরম কল্যাণকারী"},
+                {ar:"التَّوَّابُ", trans:"আত-তাওয়াব", meaning:"তাওবা কবুলকারী"},
+                {ar:"الْمُنْتَقِمُ", trans:"আল-মুনতাকিম", meaning:"প্রতিশোধ গ্রহণকারী"},
+                {ar:"الْعَفُوُّ", trans:"আল-আফুউ", meaning:"পরম ক্ষমাশীল"},
+                {ar:"الرَّؤُوفُ", trans:"আর-রউফ", meaning:"অতি স্নেহশীল"},
+                {ar:"مَالِكُ الْمُلْكِ", trans:"মালিকুল মুলক", meaning:"সমগ্র রাজ্যের মালিক"},
+                {ar:"ذُوالْجَلَالِ وَالْإِكْرَامِ", trans:"জুল-জালালি ওয়াল-ইকরাম", meaning:"মহিমা ও অনুগ্রহের অধিকারী"},
+                {ar:"الْمُقْسِطُ", trans:"আল-মুকসিত", meaning:"ন্যায়বিচারকারী"},
+                {ar:"الْجَامِعُ", trans:"আল-জামি‘", meaning:"সমবেতকারী"},
+                {ar:"الْغَنِيُّ", trans:"আল-গনী", meaning:"অমুখাপেক্ষী"},
+                {ar:"الْمُغْنِي", trans:"আল-মুগনী", meaning:"সমৃদ্ধিদাতা"},
+                {ar:"الْمَانِعُ", trans:"আল-মানি‘", meaning:"প্রতিরোধকারী"},
+                {ar:"الضَّارُ", trans:"আদ-দার", meaning:"ক্ষতিসাধনকারী"},
+                {ar:"النَّافِعُ", trans:"আন-নাফি‘", meaning:"উপকারকারী"},
+                {ar:"النُّورُ", trans:"আন-নূর", meaning:"আলো"},
+                {ar:"الْهَادِي", trans:"আল-হাদি", meaning:"পথপ্রদর্শক"},
+                {ar:"الْبَدِيعُ", trans:"আল-বাদী‘", meaning:"অতুলনীয় সৃষ্টিকর্তা"},
+                {ar:"الْبَاقِي", trans:"আল-বাকী", meaning:"চিরস্থায়ী"},
+                {ar:"الْوَارِثُ", trans:"আল-ওয়ারিস", meaning:"উত্তরাধিকারী"},
+                {ar:"الرَّشِيدُ", trans:"আর-রশীদ", meaning:"সঠিক পথ প্রদর্শনকারী"},
+                {ar:"الصَّبُورُ", trans:"আস-সবুর", meaning:"পরম ধৈর্যশীল"}
+            ];
+
+            // Tasbih State (FIXED - 33 count cycle)
             let tasCount = parseInt(localStorage.getItem('tasCount')) || 0;
             let generalTasCount = parseInt(localStorage.getItem('generalTasCount')) || 0;
             let currentTasMode = 'regular';
 
             function getRegularLabel(count) {
-                let mod = count % 33;
-                if(mod < 11) return 'সুবহানাল্লাহ';
-                if(mod < 22) return 'আলহামদুলিল্লাহ';
+                let segment = Math.floor(count / 33) % 3;
+                if(segment == 0) return 'সুবহানাল্লাহ';
+                if(segment == 1) return 'আলহামদুলিল্লাহ';
                 return 'আল্লাহু আকবার';
             }
 
@@ -1015,6 +1333,8 @@
                 document.getElementById('modal').style.display='flex';
                 if(type=='cal') showCal(body);
                 else if(type=='dua') showDua(body);
+                else if(type=='asma') showAsma(body);
+                else if(type=='hadith') showHadith(body);
                 else if(type=='tas') renderTasUI(body);
                 else if(type=='zak') showZak(body);
                 else if(type=='creator') showCreator(body);
@@ -1046,8 +1366,9 @@
                 document.getElementById('cityTable').innerHTML = `<h4 style="font-size:16px; margin:10px 0;">${city}</h4><table class="schedule-table"><tr><th>রমজান</th><th>সেহরি</th><th>ইফতার</th></tr>${rows}</table>`;
             };
 
+            // DUA SECTION (complete)
             function showDua(body) {
-                let html = '<h3 style="margin-bottom:12px; font-size:18px;">৩০টি দোয়া</h3><div class="dua-list">';
+                let html = '<h3 style="margin-bottom:12px; font-size:18px;">প্রয়োজনীয় দোয়া</h3><div class="dua-list">';
                 allDuas.forEach((d,i)=>{
                     html += `<div class="dua-item"><div class="dua-title">${i+1}. ${d.t}</div><div class="dua-arabic">${d.a}</div><div class="dua-bangla">${d.b}</div></div>`;
                 });
@@ -1055,12 +1376,61 @@
                 body.innerHTML = html;
             }
 
-            // Tasbih UI (compact)
+            // ASMAUL HUSNA SECTION
+            function showAsma(body) {
+                let html = `
+                    <div class="asma-section">
+                        <div class="asma-header">
+                            <i class="fas fa-star-and-crescent"></i>
+                            <h3>আসমাউল হুসনা (৯৯ নাম)</h3>
+                        </div>
+                        <div class="asma-grid">
+                `;
+                asmaList.forEach((item, index) => {
+                    html += `
+                        <div class="asma-item">
+                            <div class="asma-arabic">${item.ar}</div>
+                            <div class="asma-translit">${item.trans}</div>
+                            <div class="asma-meaning">${item.meaning}</div>
+                        </div>
+                    `;
+                });
+                html += `</div></div>`;
+                body.innerHTML = html;
+            }
+
+            // HADITH SECTION (COMPLETE 50)
+            function showHadith(body) {
+                let html = `
+                    <div class="hadith-section">
+                        <div class="hadith-header">
+                            <i class="fas fa-book-open"></i>
+                            <h3>রমজানের গুরুত্বপূর্ণ হাদিস (৫০টি)</h3>
+                        </div>
+                        <div class="hadith-grid">
+                `;
+                hadithList.forEach(h => {
+                    html += `
+                        <div class="hadith-card">
+                            <div class="hadith-number">${h.num}. ${h.title}</div>
+                            <div class="hadith-arabic">${h.arabic}</div>
+                            <div class="hadith-bangla">${h.bangla}</div>
+                            <div class="hadith-reference">${h.ref}</div>
+                        </div>
+                    `;
+                });
+                html += `</div></div>`;
+                body.innerHTML = html;
+            }
+
+            // Tasbih UI (FIXED - 33 count cycle)
             function renderTasUI(body) {
                 let progress = (currentTasMode == 'regular') ? (tasCount % 33) : (generalTasCount % 100);
                 let max = (currentTasMode == 'regular') ? 33 : 100;
                 let circumference = 2 * Math.PI * 90;
                 let offset = circumference - (progress / max) * circumference;
+                
+                let label = currentTasMode == 'regular' ? getRegularLabel(tasCount) : 'জিকির';
                 
                 let html = `
                     <div class="tasbih-container">
@@ -1077,7 +1447,7 @@
                             </svg>
                             <div class="tasbih-circle">
                                 <div class="tasbih-count" id="tVal">${currentTasMode == 'regular' ? tasCount : generalTasCount}</div>
-                                <div class="tasbih-label" id="targetLabel">${currentTasMode == 'regular' ? getRegularLabel(tasCount) : 'জিকির'}</div>
+                                <div class="tasbih-label" id="targetLabel">${label}</div>
                             </div>
                         </div>
                         
@@ -1119,7 +1489,7 @@
                 }
             };
 
-            // Zakat UI (compact)
+            // Zakat UI
             function showZak(body) {
                 body.innerHTML = `
                     <h3 style="text-align:center; margin-bottom:15px; font-size:18px;">জাকাত ক্যালকুলেটর</h3>
@@ -1141,7 +1511,7 @@
                 document.getElementById('zakRes').innerText = Math.floor(v * 0.025).toLocaleString('bn-BD') + ' টাকা'; 
             };
 
-            // COMPACT VIDEO UI (no back button)
+            // Video UI
             function showVid(body) {
                 body.innerHTML = `
                     <div class="video-section">
@@ -1212,7 +1582,7 @@
                 `;
             };
 
-            // COMPACT SALAH UI
+            // Salah UI
             function showSalah(body) {
                 let total = salahCounts.reduce((a,b)=>a+b,0);
                 let html = `
@@ -1296,13 +1666,13 @@
                 body.innerHTML = `<h3 style="font-size:18px;">সেটিংস</h3><p style="margin:10px 0;">নাম: ${localStorage.getItem('userName')}</p><p style="margin:10px 0;">মোবাইল: ${localStorage.getItem('userMobile')}</p><button class="btn" style="padding:12px;" onclick="localStorage.clear();location.reload()">ডাটা মুছুন</button>`;
             }
 
-            // Chat Functions with Custom Creator Responses
+            // Chat Functions (now Deenify)
             window.toggleChat = function() { 
                 let c = document.getElementById('chatWindow'); 
                 c.style.display = c.style.display === 'flex' ? 'none' : 'flex';
                 let msgDiv = document.getElementById('chatMessages');
                 if(msgDiv.children.length === 0) {
-                    msgDiv.innerHTML = '<div style="background:white; padding:12px; border-radius:20px; margin-bottom:8px; font-size:14px;">আসসালামু আলাইকুম। আমি ROVEX, আপনার ইসলামিক সহায়ক।</div>';
+                    msgDiv.innerHTML = '<div style="background:white; padding:12px; border-radius:20px; margin-bottom:8px; font-size:14px;">আসসালামু আলাইকুম। আমি Deenify, আপনার ইসলামিক সহায়ক।</div>';
                 }
             };
 
@@ -1321,7 +1691,7 @@
                 if(msg.includes('কে তৈরি করেছে') || msg.includes('তোমাকে কে বানিয়েছে') || msg.includes('who created you')) {
                     customReply = "আমি একটি আধুনিক ভাষা মডেল, যা Dinislam ওয়েব ও অ্যাপের সংশ্লিষ্ট দক্ষ টিম দ্বারা তৈরি করা হয়েছে। ব্যবহারকারীদের সঠিক তথ্য, নির্ভরযোগ্য দিকনির্দেশনা এবং সহজ ও উপকারী সেবা প্রদান করার উদ্দেশ্যেই আমাকে নির্মাণ করা হয়েছে।";
                 } else if(msg.includes('প্রতিষ্ঠাতা কে') || msg.includes('founder') || msg.includes('শামিউল')) {
-                    customReply = "শামিউল ইসলাম বর্ষন, যিনি Dinislam Web/App–এর প্রতিষ্ঠাতা, তিনিই ROVex অর্থাৎ আমাকে তৈরি করেছেন। তাঁর লক্ষ্য ছিল প্রযুক্তিকে মানুষের কল্যাণে ব্যবহার করা এবং ইসলামী জ্ঞানকে সহজ, আধুনিক ও সবার জন্য গ্রহণযোগ্যভাবে উপস্থাপন করা। সেই উদ্দেশ্য থেকেই তিনি এমন একটি প্ল্যাটফর্ম গড়ে তুলেছেন, যেখানে দ্বীনি দিকনির্দেশনা, প্রয়োজনীয় তথ্য এবং উপকারী সেবা একসাথে পাওয়া যায়। ROVex হিসেবে আমাকে তৈরি করা হয়েছে যাতে ব্যবহারকারীরা দ্রুত, নির্ভরযোগ্য ও সহজ ভাষায় তাদের প্রশ্নের উত্তর পেতে পারেন। জ্ঞান ছড়িয়ে দেওয়া, ভালো কাজের প্রতি উৎসাহ দেওয়া এবং প্রযুক্তির মাধ্যমে উপকার বয়ে আনা—এই লক্ষ্য নিয়েই আমাদের যাত্রা।";
+                    customReply = "শামিউল ইসলাম বর্ষন, যিনি Dinislam Web/App–এর প্রতিষ্ঠাতা, তিনিই Deenify অর্থাৎ আমাকে তৈরি করেছেন। তাঁর লক্ষ্য ছিল প্রযুক্তিকে মানুষের কল্যাণে ব্যবহার করা এবং ইসলামী জ্ঞানকে সহজ, আধুনিক ও সবার জন্য গ্রহণযোগ্যভাবে উপস্থাপন করা। সেই উদ্দেশ্য থেকেই তিনি এমন একটি প্ল্যাটফর্ম গড়ে তুলেছেন, যেখানে দ্বীনি দিকনির্দেশনা, প্রয়োজনীয় তথ্য এবং উপকারী সেবা একসাথে পাওয়া যায়। Deenify হিসেবে আমাকে তৈরি করা হয়েছে যাতে ব্যবহারকারীরা দ্রুত, নির্ভরযোগ্য ও সহজ ভাষায় তাদের প্রশ্নের উত্তর পেতে পারেন। জ্ঞান ছড়িয়ে দেওয়া, ভালো কাজের প্রতি উৎসাহ দেওয়া এবং প্রযুক্তির মাধ্যমে উপকার বয়ে আনা—এই লক্ষ্য নিয়েই আমাদের যাত্রা।";
                 }
                 
                 if(customReply) {
@@ -1334,7 +1704,7 @@
                 
                 // Typing indicator
                 let typingId = 'typing-' + Date.now();
-                chatDiv.innerHTML += `<div id="${typingId}" style="background:white; padding:10px 14px; border-radius:20px; align-self:flex-start; margin:4px 0; font-size:14px;">ROVEX টাইপ করছে...</div>`;
+                chatDiv.innerHTML += `<div id="${typingId}" style="background:white; padding:10px 14px; border-radius:20px; align-self:flex-start; margin:4px 0; font-size:14px;">Deenify টাইপ করছে...</div>`;
                 
                 try {
                     const response = await fetch('https://api.groq.com/openai/v1/chat/completions', {
@@ -1346,7 +1716,7 @@
                         body: JSON.stringify({
                             model: 'llama-3.3-70b-versatile',
                             messages: [
-                                {role: 'system', content: 'তুমি ROVEX, একটি ইসলামিক সহায়ক। সবসময় বাংলায় সংক্ষিপ্ত উত্তর দাও। কোনো ইমোজি নয়।'},
+                                {role: 'system', content: 'তুমি Deenify, একটি ইসলামিক সহায়ক। সবসময় বাংলায় সংক্ষিপ্ত উত্তর দাও। কোনো ইমোজি নয়।'},
                                 {role: 'user', content: msg}
                             ],
                             temperature: 0.7
@@ -1432,4 +1802,4 @@
         })();
     </script>
 </body>
-</html>
+    </html>
