@@ -66,7 +66,8 @@
         .dark-mode .profile-card,
         .dark-mode .chat-messages-professional,
         .dark-mode .photo-card,
-        .dark-mode .compact-profile-card {
+        .dark-mode .compact-profile-card,
+        .dark-mode .simple-profile-card {
             background: #1e3342;
             color: #dae8f2;
             border-color: #314b5c;
@@ -195,7 +196,7 @@
             background: #c44b4b;
         }
 
-        /* ----- PROFESSIONAL LOGIN PAGE (Redesigned) ----- */
+        /* ----- PROFESSIONAL LOGIN PAGE (Centered Logo) ----- */
         .login-page {
             min-height: 100vh;
             display: flex;
@@ -207,59 +208,63 @@
         .login-card {
             background: rgba(255,255,255,0.95);
             backdrop-filter: blur(20px);
-            border-radius: 60px;
-            padding: 40px 35px;
-            max-width: 420px;
+            border-radius: 50px;
+            padding: 30px 28px;
+            max-width: 380px;
             width: 100%;
-            box-shadow: 0 30px 50px -20px #185e6b;
+            box-shadow: 0 25px 40px -18px #185e6b;
             border: 1px solid rgba(255,255,255,0.5);
-            animation: slideUp 0.5s ease;
+            animation: slideUp 0.4s ease;
         }
         @keyframes slideUp {
-            from { opacity: 0; transform: translateY(30px); }
+            from { opacity: 0; transform: translateY(20px); }
             to { opacity: 1; transform: translateY(0); }
         }
+        .login-logo-wrapper {
+            text-align: center;
+            margin-bottom: 12px;
+        }
         .login-logo {
-            width: 90px;
-            height: 90px;
+            width: 70px;
+            height: 70px;
             border-radius: 50%;
-            margin: 0 auto 20px;
-            border: 4px solid white;
-            box-shadow: 0 15px 30px -10px #185e6b;
+            border: 3px solid white;
+            box-shadow: 0 10px 20px -10px #185e6b;
+            display: inline-block;
         }
         .login-title {
-            font-size: 38px;
+            font-size: 32px;
             font-weight: 700;
             background: linear-gradient(145deg, #185e6b, #b35f38);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             text-align: center;
-            margin-bottom: 5px;
+            margin-bottom: 2px;
         }
         .login-subtitle {
             text-align: center;
             color: var(--text-soft);
-            margin-bottom: 30px;
-            font-size: 15px;
+            margin-bottom: 20px;
+            font-size: 13px;
         }
         .input-group {
-            margin-bottom: 20px;
+            margin-bottom: 15px;
             position: relative;
         }
         .input-group i {
             position: absolute;
-            left: 20px;
+            left: 18px;
             top: 50%;
             transform: translateY(-50%);
             color: var(--primary-soft);
-            font-size: 18px;
+            font-size: 16px;
         }
         .input-field {
             width: 100%;
-            padding: 16px 20px 16px 50px;
+            padding: 14px 20px 14px 48px;
             border: 2px solid #d3e2ec;
-            border-radius: 60px;
-            font-size: 15px;
+            border-radius: 50px;
+            font-size: 14px;
             transition: 0.2s;
             background: white;
         }
@@ -270,20 +275,20 @@
         }
         .btn {
             width: 100%;
-            padding: 16px;
+            padding: 14px;
             background: var(--primary-deep);
             color: white;
             border: none;
-            border-radius: 60px;
+            border-radius: 50px;
             font-weight: 600;
-            font-size: 16px;
+            font-size: 15px;
             cursor: pointer;
             transition: 0.2s;
-            box-shadow: 0 10px 20px -8px #185e6b;
+            box-shadow: 0 8px 15px -8px #185e6b;
             display: flex;
             align-items: center;
             justify-content: center;
-            gap: 10px;
+            gap: 8px;
         }
         .btn:hover {
             background: var(--primary-soft);
@@ -296,16 +301,16 @@
         }
         .otp-container {
             display: flex;
-            gap: 10px;
+            gap: 8px;
             justify-content: center;
-            margin: 25px 0;
+            margin: 20px 0;
         }
         .otp-input {
-            width: 50px;
-            height: 60px;
+            width: 45px;
+            height: 52px;
             border: 2px solid #d3e2ec;
-            border-radius: 20px;
-            font-size: 26px;
+            border-radius: 18px;
+            font-size: 24px;
             text-align: center;
             font-weight: 600;
             background: white;
@@ -316,12 +321,12 @@
         }
         .login-footer {
             text-align: center;
-            margin-top: 20px;
+            margin-top: 15px;
             color: var(--text-soft);
-            font-size: 13px;
+            font-size: 12px;
         }
 
-        /* ----- COMPACT WELCOME PAGE ----- */
+        /* ----- PROFESSIONAL WELCOME PAGE ----- */
         .welcome-page {
             min-height: 100vh;
             display: flex;
@@ -334,44 +339,60 @@
             background: rgba(255,255,255,0.95);
             backdrop-filter: blur(20px);
             border-radius: 60px;
-            padding: 40px 35px;
-            max-width: 500px;
+            padding: 35px 30px;
+            max-width: 450px;
             width: 100%;
-            box-shadow: 0 30px 50px -20px #185e6b;
+            box-shadow: 0 25px 40px -18px #185e6b;
             border: 1px solid rgba(255,255,255,0.5);
-            animation: fadeIn 0.5s ease;
+            animation: fadeIn 0.4s ease;
             text-align: center;
         }
         .welcome-logo {
-            width: 90px;
-            height: 90px;
+            width: 80px;
+            height: 80px;
             border-radius: 50%;
-            margin: 0 auto 15px;
+            margin: 0 auto 10px;
             border: 4px solid white;
-            box-shadow: 0 12px 20px -10px #185e6b;
+            box-shadow: 0 10px 20px -10px #185e6b;
         }
         .welcome-name {
-            font-size: 36px;
+            font-size: 30px;
             font-weight: 700;
             color: var(--primary-deep);
-            margin-bottom: 10px;
+            margin-bottom: 5px;
+        }
+        .welcome-greeting {
+            font-size: 16px;
+            color: var(--accent-terra);
+            margin-bottom: 15px;
+            font-weight: 500;
         }
         .welcome-message-box {
             background: white;
             border-radius: 40px;
-            padding: 25px;
-            margin: 20px 0;
+            padding: 20px;
+            margin: 15px 0;
             color: var(--text-main);
-            line-height: 1.6;
-            font-size: 16px;
+            line-height: 1.7;
+            font-size: 14px;
             box-shadow: inset 0 2px 8px rgba(0,0,0,0.02), 0 8px 15px -12px #185e6b;
+            text-align: left;
+        }
+        .welcome-quote {
+            font-style: italic;
+            color: var(--primary-deep);
+            font-weight: 500;
+            text-align: center;
+            margin: 15px 0 10px;
+            font-size: 14px;
         }
         .welcome-buttons {
             display: flex;
-            gap: 12px;
+            gap: 10px;
+            margin-top: 10px;
         }
 
-        /* ----- HERO (Bangla) ----- */
+        /* ----- HERO ----- */
         .hero {
             background: linear-gradient(125deg, #1b5b68, #227485);
             border-radius: 28px;
@@ -437,7 +458,7 @@
             opacity: 0.8;
         }
 
-        /* Dashboard Grid (Bangla titles) */
+        /* Dashboard Grid */
         .dashboard-grid {
             display: grid;
             grid-template-columns: repeat(8, 1fr);
@@ -466,7 +487,7 @@
             color: var(--text-main);
         }
 
-        /* Chat Button - Deenify with Logo */
+        /* Chat Button */
         .chat-button {
             position: fixed;
             bottom: 15px;
@@ -507,7 +528,7 @@
             border-radius: 20px;
         }
 
-        /* Professional Chat Window */
+        /* Chat Window */
         .chat-window {
             position: fixed;
             bottom: 75px;
@@ -644,7 +665,7 @@
             transform: scale(1.05);
         }
 
-        /* Modal (without close button in Profile) */
+        /* Modal */
         .modal {
             display: none;
             position: fixed;
@@ -668,7 +689,6 @@
             box-shadow: var(--shadow-elevated);
             border: 1px solid rgba(255,255,255,0.7);
         }
-        /* Close button only visible for non-profile modals */
         .modal-close:not(.profile-modal) {
             position: absolute;
             top: 14px;
@@ -689,74 +709,33 @@
             display: none;
         }
 
-        /* ----- COMPACT PROFILE PAGE (no × button) ----- */
-        .compact-profile-card {
+        /* ----- SIMPLE PROFILE PAGE ----- */
+        .simple-profile-card {
             background: white;
             border-radius: 36px;
-            padding: 20px 18px;
-            box-shadow: 0 15px 30px -15px #185e6b;
+            padding: 25px 20px;
+            box-shadow: 0 20px 35px -18px #185e6b;
             position: relative;
             overflow: hidden;
+            text-align: center;
         }
-        .profile-header-bar {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            margin-bottom: 10px;
-        }
-        .profile-back-btn {
-            background: #ecf5fc;
-            border: none;
-            border-radius: 40px;
-            padding: 8px 16px;
-            font-size: 13px;
-            font-weight: 600;
-            color: var(--primary-deep);
-            cursor: pointer;
-            display: flex;
-            align-items: center;
-            gap: 6px;
-            transition: 0.2s;
-        }
-        .profile-back-btn:hover {
-            background: var(--primary-soft);
-            color: white;
-        }
-        .profile-edit-header-btn {
-            background: #ecf5fc;
-            border: none;
-            border-radius: 40px;
-            padding: 8px 16px;
-            font-size: 13px;
-            font-weight: 600;
-            color: var(--primary-deep);
-            cursor: pointer;
-            display: flex;
-            align-items: center;
-            gap: 6px;
-            transition: 0.2s;
-        }
-        .profile-edit-header-btn:hover {
-            background: var(--primary-soft);
-            color: white;
-        }
-        .profile-cover-mini {
-            height: 70px;
+        .profile-simple-cover {
+            height: 80px;
             background: linear-gradient(135deg, var(--primary-deep), #0e3f48);
             border-radius: 30px 30px 0 0;
-            margin: 0 -18px 0 -18px;
+            margin: -25px -20px 0 -20px;
             position: relative;
         }
-        .profile-avatar-mini-wrapper {
+        .profile-simple-avatar-wrapper {
             position: relative;
-            width: 90px;
-            height: 90px;
+            width: 100px;
+            height: 100px;
             margin: -40px auto 15px;
             cursor: pointer;
         }
-        .profile-avatar-mini {
-            width: 90px;
-            height: 90px;
+        .profile-simple-avatar {
+            width: 100px;
+            height: 100px;
             border-radius: 50%;
             border: 4px solid white;
             box-shadow: 0 10px 20px -10px #185e6b;
@@ -765,17 +744,17 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 36px;
+            font-size: 40px;
             color: white;
             font-weight: 600;
         }
-        .profile-avatar-edit-mini {
+        .profile-simple-avatar-edit {
             position: absolute;
             bottom: 5px;
             right: 5px;
             background: white;
-            width: 28px;
-            height: 28px;
+            width: 30px;
+            height: 30px;
             border-radius: 50%;
             display: flex;
             align-items: center;
@@ -784,150 +763,46 @@
             box-shadow: 0 4px 10px rgba(0,0,0,0.1);
             cursor: pointer;
             border: 2px solid white;
-            font-size: 12px;
-        }
-        .profile-info-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 12px;
-            margin: 15px 0;
-        }
-        .profile-info-item {
-            background: #ecf5fc;
-            border-radius: 24px;
-            padding: 12px 10px;
-            text-align: center;
-        }
-        .profile-info-label {
-            font-size: 11px;
-            color: var(--text-soft);
-            margin-bottom: 4px;
-        }
-        .profile-info-value {
-            font-weight: 600;
-            color: var(--primary-deep);
             font-size: 14px;
-            word-break: break-word;
         }
-        .profile-bio-mini {
-            background: #ecf5fc;
-            border-radius: 24px;
-            padding: 12px 15px;
-            margin: 15px 0;
-            font-size: 13px;
-            color: var(--text-main);
-        }
-
-        /* Photo Card (compact for download) */
-        .photo-card-compact {
-            background: linear-gradient(145deg, #ffffff, #f5faff);
-            border-radius: 40px;
-            padding: 20px 18px;
-            margin: 20px 0 10px;
-            box-shadow: 0 20px 30px -15px #185e6b;
-            position: relative;
-            overflow: hidden;
-        }
-        .photo-card-compact-header {
-            display: flex;
-            align-items: center;
-            gap: 12px;
-            margin-bottom: 15px;
-        }
-        .photo-card-compact-logo {
-            width: 45px;
-            height: 45px;
-            border-radius: 50%;
-            background: var(--primary-deep);
-            border: 2px solid white;
-            box-shadow: 0 5px 10px -5px #185e6b;
-        }
-        .photo-card-compact-logo img {
-            width: 100%;
-            height: 100%;
-            border-radius: 50%;
-            object-fit: cover;
-        }
-        .photo-card-compact-title {
-            font-size: 18px;
+        .profile-simple-name {
+            font-size: 24px;
             font-weight: 700;
             color: var(--primary-deep);
+            margin: 10px 0 5px;
         }
-        .photo-card-compact-subtitle {
-            font-size: 10px;
+        .profile-simple-phone {
+            font-size: 16px;
             color: var(--text-soft);
-        }
-        .photo-card-compact-avatar {
-            width: 70px;
-            height: 70px;
-            border-radius: 50%;
-            margin: 0 auto 12px;
-            border: 3px solid white;
-            box-shadow: 0 8px 15px -8px #185e6b;
-            object-fit: cover;
-            background: var(--primary-soft);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 30px;
-            color: white;
-        }
-        .photo-card-compact-name {
-            font-size: 20px;
-            font-weight: 700;
-            color: var(--primary-deep);
-            text-align: center;
-            margin-bottom: 10px;
-        }
-        .photo-card-compact-info {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 10px;
-            margin: 15px 0;
-        }
-        .photo-card-compact-info-item {
-            background: rgba(47,132,149,0.05);
-            border-radius: 20px;
-            padding: 10px;
-            text-align: center;
-        }
-        .photo-card-compact-info-label {
-            font-size: 9px;
-            color: var(--text-soft);
-        }
-        .photo-card-compact-info-value {
-            font-weight: 600;
-            color: var(--primary-deep);
-            font-size: 12px;
-        }
-        .photo-card-compact-footer {
-            text-align: center;
-            font-size: 10px;
-            color: var(--text-soft);
-            margin-top: 10px;
-        }
-        .photo-card-download-btn-compact {
-            background: linear-gradient(135deg, var(--primary-deep), #124a55);
-            color: white;
-            border: none;
-            border-radius: 40px;
-            padding: 12px;
-            font-weight: 600;
-            width: 100%;
-            cursor: pointer;
-            transition: 0.2s;
+            margin-bottom: 25px;
             display: flex;
             align-items: center;
             justify-content: center;
             gap: 8px;
-            margin: 15px 0 5px;
-            font-size: 13px;
         }
-        .photo-card-download-btn-compact:hover {
+        .profile-simple-back-btn {
+            background: #ecf5fc;
+            border: none;
+            border-radius: 40px;
+            padding: 12px 20px;
+            font-size: 14px;
+            font-weight: 600;
+            color: var(--primary-deep);
+            cursor: pointer;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            transition: 0.2s;
+            width: 100%;
+            margin-top: 10px;
+        }
+        .profile-simple-back-btn:hover {
             background: var(--primary-soft);
+            color: white;
         }
 
-        /* ----- COMPACT SALAH SECTION (all visible, no scroll) ----- */
+        /* ----- COMPACT SALAH SECTION ----- */
         .salah-section-compact-view {
             background: linear-gradient(135deg, #f4fcff, #e8f2fa);
             border-radius: 28px;
@@ -1044,12 +919,9 @@
             color: white;
         }
 
-        /* ----- SETTINGS SECTION (Redesigned - no Dark Mode) ----- */
+        /* ----- SETTINGS SECTION ----- */
         .settings-container {
             padding: 10px 0;
-        }
-        .settings-header {
-            margin-bottom: 20px;
         }
         .settings-header h3 {
             font-size: 24px;
@@ -1133,7 +1005,7 @@
             color: white;
         }
 
-        /* ----- ASMAUL HUSNA (99 names) ----- */
+        /* ----- ASMAUL HUSNA (99 names - FULL) ----- */
         .asma-section {
             background: linear-gradient(145deg, #fefcf5, #fbf7ed);
             border-radius: 28px;
@@ -1189,7 +1061,7 @@
             color: var(--text-main);
         }
 
-        /* ----- HADITH SECTION (50 restored) ----- */
+        /* ----- HADITH SECTION (50 - FULL) ----- */
         .hadith-section {
             background: linear-gradient(145deg, #fffbf5, #fef9f0);
             border-radius: 28px;
@@ -1256,7 +1128,7 @@
             font-style: italic;
         }
 
-        /* ----- DUA SECTION (30 restored) ----- */
+        /* ----- DUA SECTION (30 - FULL) ----- */
         .dua-list {
             display: flex;
             flex-direction: column;
@@ -1581,7 +1453,7 @@
             height: 160px;
         }
 
-        /* ----- CREATOR SECTION (original restored) ----- */
+        /* ----- CREATOR SECTION ----- */
         .creator-section {
             text-align: center;
         }
@@ -1761,10 +1633,12 @@
         </div>
     </div>
 
-    <!-- LOGIN PAGE (Professional Redesign) -->
+    <!-- LOGIN PAGE (Centered Logo) -->
     <div id="login-page" class="login-page">
         <div class="login-card" id="loginCard">
-            <img src="https://i.postimg.cc/yNhjsYJ4/1771310158774-01.jpg" class="login-logo">
+            <div class="login-logo-wrapper">
+                <img src="https://i.postimg.cc/yNhjsYJ4/1771310158774-01.jpg" class="login-logo">
+            </div>
             <div class="login-title">DINISLAM</div>
             <div class="login-subtitle">রমজান ২০২৬</div>
             
@@ -1781,8 +1655,8 @@
             </div>
 
             <div id="loginStep2" style="display:none;">
-                <p style="text-align:center; color:#4f6f7e; margin-bottom:10px; font-size:14px;">ওটিপি ভেরিফিকেশন</p>
-                <p style="text-align:center; font-size:13px; color:var(--text-soft); margin-bottom:15px;">৬ ডিজিটের কোড দিন</p>
+                <p style="text-align:center; color:#4f6f7e; margin-bottom:8px; font-size:14px;">ওটিপি ভেরিফিকেশন</p>
+                <p style="text-align:center; font-size:13px; color:var(--text-soft); margin-bottom:12px;">৬ ডিজিটের কোড দিন</p>
                 <div class="otp-container">
                     <input type="text" class="otp-input" maxlength="1" onkeyup="moveToNext(this, 1)">
                     <input type="text" class="otp-input" maxlength="1" onkeyup="moveToNext(this, 2)">
@@ -1791,8 +1665,8 @@
                     <input type="text" class="otp-input" maxlength="1" onkeyup="moveToNext(this, 5)">
                     <input type="text" class="otp-input" maxlength="1" onkeyup="moveToNext(this, 6)">
                 </div>
-                <button class="btn" onclick="verifyOTP()" style="margin-top:15px;"><i class="fas fa-check-circle"></i> নিশ্চিত করুন</button>
-                <button class="btn btn-outline" onclick="backToLogin()" style="margin-top:8px;"><i class="fas fa-arrow-left"></i> পিছনে</button>
+                <button class="btn" onclick="verifyOTP()" style="margin-top:12px;"><i class="fas fa-check-circle"></i> নিশ্চিত করুন</button>
+                <button class="btn btn-outline" onclick="backToLogin()" style="margin-top:6px;"><i class="fas fa-arrow-left"></i> পিছনে</button>
             </div>
             
             <div class="login-footer">
@@ -1806,7 +1680,14 @@
         <div class="welcome-card">
             <img src="https://i.postimg.cc/yNhjsYJ4/1771310158774-01.jpg" class="welcome-logo">
             <div class="welcome-name" id="displayUserName"></div>
-            <div class="welcome-message-box" id="welcomeMessage"></div>
+            <div class="welcome-greeting" id="greetingText"></div>
+            <div class="welcome-message-box" id="welcomeMessage">
+                <p>রমজান হল আত্মশুদ্ধি, ধৈর্য ও ত্যাগের মাস। এই মাসে প্রতিটি নেক আমলের সওয়াব বহুগুণে বৃদ্ধি পায়।</p>
+                <p style="margin-top:8px;">আল্লাহর নৈকট্য লাভের এই সুবর্ণ সুযোগকে কাজে লাগান। বেশি বেশি কুরআন তিলাওয়াত করুন, দান-সদকা করুন এবং নফল ইবাদতের মাধ্যমে নিজেকে সমৃদ্ধ করুন।</p>
+            </div>
+            <div class="welcome-quote">
+                "রমজান এমন একটি মাস যার প্রথম অংশ রহমত, মধ্যম অংশ মাগফিরাত এবং শেষ অংশ জাহান্নাম থেকে মুক্তি।"
+            </div>
             <div class="welcome-buttons">
                 <button class="btn" onclick="enterMainPage()" style="flex:1;">প্রধান পৃষ্ঠা</button>
                 <button class="btn btn-outline" onclick="downloadWelcomePDF()" style="flex:1;">ডাউনলোড</button>
@@ -1913,13 +1794,10 @@
             let pendingMobile = null;
             let pendingName = null;
 
-            // Profile data storage
+            // Profile data storage (simplified)
             let profileData = JSON.parse(localStorage.getItem('profileData')) || {
                 name: localStorage.getItem('userName') || '',
                 mobile: localStorage.getItem('userMobile') || '',
-                email: '',
-                location: '',
-                bio: '',
                 avatar: null
             };
 
@@ -2018,8 +1896,8 @@
                     document.getElementById('displayUserName').innerText = pendingName;
                     
                     let h = new Date().getHours();
-                    let g = h<12?'শুভ সকাল':h<17?'শুভ বিকাল':'শুভ সন্ধ্যা';
-                    document.getElementById('welcomeMessage').innerHTML = `<p>${g} ${pendingName},</p><p>DINISLAM-এ স্বাগতম। রমজানের সবকিছু এক ক্লিকে।</p><p style="color:#185e6b;">আল্লাহ আপনার নেক কাজ কবুল করুন।</p>`;
+                    let greeting = h < 12 ? 'শুভ সকাল' : h < 17 ? 'শুভ বিকাল' : 'শুভ সন্ধ্যা';
+                    document.getElementById('greetingText').innerText = greeting;
                 } else {
                     showAlert('ভুল ওটিপি', 'আপনার দেওয়া ওটিপি সঠিক নয়', 'error');
                 }
@@ -2037,8 +1915,8 @@
                 document.getElementById('welcome-page').style.display = 'flex';
                 document.getElementById('displayUserName').innerText = localStorage.getItem('userName');
                 let h = new Date().getHours();
-                let g = h<12?'শুভ সকাল':h<17?'শুভ বিকাল':'শুভ সন্ধ্যা';
-                document.getElementById('welcomeMessage').innerHTML = `<p>${g} ${localStorage.getItem('userName')},</p><p>DINISLAM-এ স্বাগতম। রমজানের সবকিছু এক ক্লিকে।</p><p style="color:#185e6b;">আল্লাহ আপনার নেক কাজ কবুল করুন।</p>`;
+                let greeting = h < 12 ? 'শুভ সকাল' : h < 17 ? 'শুভ বিকাল' : 'শুভ সন্ধ্যা';
+                document.getElementById('greetingText').innerText = greeting;
             }
 
             // Schedule Data
@@ -2053,7 +1931,7 @@
                 'ময়মনসিংহ': {sehriBase: '04:48', iftarBase: '18:00'}
             };
 
-            // ===== 30 DUAS =====
+            // ===== 30 DUAS (FULL) =====
             const allDuas = [
                 {t:"চাঁদ দেখার দোয়া", a:"اللَّهُمَّ أَهِلَّهُ عَلَيْنَا بِالْأَمْنِ وَالْإِيمَانِ", b:"হে আল্লাহ! চাঁদকে আমাদের জন্য নিরাপত্তা ও ঈমানের সাথে উদিত করুন।"},
                 {t:"রোজার নিয়ত", a:"نَوَيْتُ أَنْ أَصُومَ غَدًا لِلّٰهِ تَعَالَى", b:"আগামীকাল রমজানের রোজা রাখার নিয়ত করলাম।"},
@@ -2087,7 +1965,7 @@
                 {t:"সালাম ফেরানোর দোয়া", a:"السَّلَامُ عَلَيْكُمْ وَرَحْمَةُ اللَّهِ", b:"আপনাদের প্রতি শান্তি ও রহমত বর্ষিত হোক।"}
             ];
 
-            // ===== 50 RAMADAN HADITH =====
+            // ===== 50 RAMADAN HADITH (FULL) =====
             const hadithList = [
                 {num:"১", title:"নিয়তের গুরুত্ব", arabic:"إِنَّمَا الأَعْمَالُ بِالنِّيَّاتِ", bangla:"সমস্ত কাজ নিয়তের উপর নির্ভরশীল।", ref:"সহীহ বুখারী, হাদীস নং ১; সহীহ মুসলিম, হাদীস নং ১৯০৭"},
                 {num:"২", title:"রমজানে ঈমান ও সওয়াবের আশায় রোজা", arabic:"مَنْ صَامَ رَمَضَانَ إِيمَانًا وَاحْتِسَابًا غُفِرَ لَهُ مَا تَقَدَّمَ مِنْ ذَنْبِهِ", bangla:"যে ব্যক্তি ঈমানের সাথে এবং সওয়াবের আশায় রমজান মাসে রোজা রাখে, তার পূর্বের গুনাহ ক্ষমা করা হয়।", ref:"সহীহ বুখারী, হাদীস নং ৩৮; সহীহ মুসলিম, হাদীস নং ৭৬০"},
@@ -2141,7 +2019,7 @@
                 {num:"৫০", title:"জান্নাতের রাইয়ান দরজা", arabic:"إِنَّ فِي الجَنَّةِ بَابًا يُقَالُ لَهُ الرَّيَّانُ يَدْخُلُ مِنْهُ الصَّائِمُونَ", bangla:"জান্নাতে ‘রাইয়ান’ নামে একটি দরজা আছে; রোজাদাররা তা দিয়ে প্রবেশ করবে।", ref:"সহীহ বুখারী, হাদীস নং ১৮৯৬; সহীহ মুসলিম, হাদীস নং ১১৫২"}
             ];
 
-            // ===== 99 ASMAUL HUSNA =====
+            // ===== 99 ASMAUL HUSNA (FULL) =====
             const asmaList = [
                 {ar:"الرَّحْمٰنُ", trans:"আর-রহমান", meaning:"পরম করুণাময়"},
                 {ar:"الرَّحِيمُ", trans:"আর-রহীম", meaning:"অতি দয়ালু"},
@@ -2275,7 +2153,6 @@
                 panel.style.display = panel.style.display === 'flex' ? 'none' : 'flex';
             };
 
-            // Close side menu when clicking outside
             document.addEventListener('click', function(event) {
                 let panel = document.getElementById('sideOptionsPanel');
                 let menuBtn = document.querySelector('.header-left');
@@ -2284,13 +2161,11 @@
                 }
             });
 
-            // Modal Open
             window.openModal = function(type) {
                 let body = document.getElementById('modal-body');
                 document.getElementById('modal').style.display='flex';
                 document.getElementById('sideOptionsPanel').style.display = 'none';
                 
-                // Hide close button for profile modal
                 if (type === 'profile') {
                     document.getElementById('modalCloseBtn').classList.add('profile-modal');
                 } else {
@@ -2388,135 +2263,34 @@
                 body.innerHTML = html;
             }
 
-            // Profile Page with Clear Back Button (no ×)
+            // Simplified Profile Page
             function showProfile(body) {
                 let name = profileData.name || localStorage.getItem('userName') || 'ব্যবহারকারী';
                 let mobile = profileData.mobile || localStorage.getItem('userMobile') || '';
-                let email = profileData.email || '';
-                let location = profileData.location || '';
-                let bio = profileData.bio || '';
                 let avatar = profileData.avatar;
                 
                 let avatarHtml = avatar ? 
-                    `<img src="${avatar}" class="profile-avatar-mini" id="profileAvatar">` : 
-                    `<div class="profile-avatar-mini" id="profileAvatar">${name.charAt(0).toUpperCase()}</div>`;
+                    `<img src="${avatar}" class="profile-simple-avatar" id="profileAvatar">` : 
+                    `<div class="profile-simple-avatar" id="profileAvatar">${name.charAt(0).toUpperCase()}</div>`;
                 
                 body.innerHTML = `
-                    <div class="compact-profile-card">
-                        <div class="profile-header-bar">
-                            <button class="profile-back-btn" onclick="closeModal()">
-                                <i class="fas fa-arrow-left"></i> পিছনে
-                            </button>
-                            <button class="profile-edit-header-btn" onclick="editProfileField()">
-                                <i class="fas fa-pen"></i> এডিট
-                            </button>
-                        </div>
-                        <div class="profile-cover-mini"></div>
-                        <div class="profile-avatar-mini-wrapper" onclick="document.getElementById('avatarUpload').click()">
+                    <div class="simple-profile-card">
+                        <div class="profile-simple-cover"></div>
+                        <div class="profile-simple-avatar-wrapper" onclick="document.getElementById('avatarUpload').click()">
                             ${avatarHtml}
-                            <div class="profile-avatar-edit-mini"><i class="fas fa-camera"></i></div>
+                            <div class="profile-simple-avatar-edit"><i class="fas fa-camera"></i></div>
                         </div>
                         <input type="file" id="avatarUpload" accept="image/*" style="display:none" onchange="handleAvatarUpload(event)">
                         
-                        <div id="profileViewMode">
-                            <div class="profile-info-grid">
-                                <div class="profile-info-item">
-                                    <div class="profile-info-label">নাম</div>
-                                    <div class="profile-info-value" id="displayName">${name}</div>
-                                </div>
-                                <div class="profile-info-item">
-                                    <div class="profile-info-label">মোবাইল</div>
-                                    <div class="profile-info-value" id="displayMobile">${mobile}</div>
-                                </div>
-                                <div class="profile-info-item">
-                                    <div class="profile-info-label">ইমেইল</div>
-                                    <div class="profile-info-value" id="displayEmail">${email || '—'}</div>
-                                </div>
-                                <div class="profile-info-item">
-                                    <div class="profile-info-label">ঠিকানা</div>
-                                    <div class="profile-info-value" id="displayLocation">${location || '—'}</div>
-                                </div>
-                            </div>
-                            
-                            <div class="profile-bio-mini" id="displayBio">${bio || 'কোনো বায়ো দেওয়া হয়নি'}</div>
-                            
-                            <!-- Photo Card for Download -->
-                            <div class="photo-card-compact" id="photoCard">
-                                <div class="photo-card-compact-header">
-                                    <div class="photo-card-compact-logo">
-                                        <img src="https://i.postimg.cc/yNhjsYJ4/1771310158774-01.jpg">
-                                    </div>
-                                    <div>
-                                        <div class="photo-card-compact-title">DINISLAM</div>
-                                        <div class="photo-card-compact-subtitle">রমজান ২০২৬</div>
-                                    </div>
-                                </div>
-                                <div class="photo-card-compact-avatar">
-                                    ${avatar ? `<img src="${avatar}" style="width:100%; height:100%; border-radius:50%; object-fit:cover;">` : name.charAt(0).toUpperCase()}
-                                </div>
-                                <div class="photo-card-compact-name">${name}</div>
-                                <div class="photo-card-compact-info">
-                                    <div class="photo-card-compact-info-item">
-                                        <div class="photo-card-compact-info-label">মোবাইল</div>
-                                        <div class="photo-card-compact-info-value">${mobile}</div>
-                                    </div>
-                                    <div class="photo-card-compact-info-item">
-                                        <div class="photo-card-compact-info-label">ইমেইল</div>
-                                        <div class="photo-card-compact-info-value">${email || '—'}</div>
-                                    </div>
-                                </div>
-                                <div class="photo-card-compact-footer">
-                                    <i class="fas fa-moon"></i> রমজান ২০২৬ · বারাকাল্লাহ
-                                </div>
-                            </div>
-                            
-                            <button class="photo-card-download-btn-compact" onclick="downloadPhotoCard()">
-                                <i class="fas fa-download"></i> ফটো কার্ড ডাউনলোড
-                            </button>
-                        </div>
+                        <div class="profile-simple-name">${name}</div>
+                        <div class="profile-simple-phone"><i class="fas fa-phone-alt"></i> ${mobile}</div>
                         
-                        <div id="profileEditMode" style="display:none;">
-                            <div style="margin-bottom:12px;">
-                                <input type="text" id="editNameInput" class="input-field" value="${name}" placeholder="নাম">
-                            </div>
-                            <div style="margin-bottom:12px;">
-                                <input type="email" id="editEmailInput" class="input-field" value="${email}" placeholder="ইমেইল">
-                            </div>
-                            <div style="margin-bottom:12px;">
-                                <input type="text" id="editLocationInput" class="input-field" value="${location}" placeholder="ঠিকানা">
-                            </div>
-                            <div style="margin-bottom:12px;">
-                                <textarea id="editBioInput" class="input-field" rows="2" placeholder="বায়ো">${bio}</textarea>
-                            </div>
-                            <button class="profile-edit-btn-mini" onclick="saveProfile()">সংরক্ষণ করুন</button>
-                            <button class="profile-edit-btn-mini" style="background:white; color:var(--primary-deep); margin-top:8px;" onclick="cancelProfileEdit()">বাতিল</button>
-                        </div>
+                        <button class="profile-simple-back-btn" onclick="closeModal()">
+                            <i class="fas fa-arrow-left"></i> পিছনে
+                        </button>
                     </div>
                 `;
             }
-
-            window.editProfileField = function() {
-                document.getElementById('profileViewMode').style.display = 'none';
-                document.getElementById('profileEditMode').style.display = 'block';
-            };
-
-            window.cancelProfileEdit = function() {
-                document.getElementById('profileViewMode').style.display = 'block';
-                document.getElementById('profileEditMode').style.display = 'none';
-            };
-
-            window.saveProfile = function() {
-                profileData.name = document.getElementById('editNameInput').value;
-                profileData.email = document.getElementById('editEmailInput').value;
-                profileData.location = document.getElementById('editLocationInput').value;
-                profileData.bio = document.getElementById('editBioInput').value;
-                
-                localStorage.setItem('profileData', JSON.stringify(profileData));
-                localStorage.setItem('userName', profileData.name);
-                
-                showAlert('প্রোফাইল আপডেট', 'আপনার প্রোফাইল সংরক্ষণ করা হয়েছে', 'success');
-                openModal('profile');
-            };
 
             window.handleAvatarUpload = function(event) {
                 const file = event.target.files[0];
@@ -2526,29 +2300,12 @@
                         profileData.avatar = e.target.result;
                         localStorage.setItem('profileData', JSON.stringify(profileData));
                         openModal('profile');
+                        showAlert('ছবি আপলোড', 'প্রোফাইল ছবি সফলভাবে পরিবর্তন করা হয়েছে', 'success');
                     };
                     reader.readAsDataURL(file);
                 }
             };
 
-            // Silent Photo Card Download
-            window.downloadPhotoCard = function() {
-                const card = document.getElementById('photoCard');
-                html2canvas(card, {
-                    scale: 2,
-                    backgroundColor: null,
-                    allowTaint: false,
-                    useCORS: true,
-                    logging: false
-                }).then(canvas => {
-                    const link = document.createElement('a');
-                    link.download = 'dinislam-profile.jpg';
-                    link.href = canvas.toDataURL('image/jpeg', 0.95);
-                    link.click();
-                }).catch(error => {});
-            };
-
-            // Creator Section (original restored)
             function showCreator(body) {
                 body.innerHTML = `
                     <div class="creator-section">
@@ -2570,7 +2327,6 @@
                 `;
             }
 
-            // Compact Salah Section (all visible, no scroll)
             function showSalah(body) {
                 let total = salahCounts.reduce((a,b)=>a+b,0);
                 let html = `
@@ -2628,7 +2384,6 @@
                 });
             };
 
-            // Settings Page (Redesigned - no Dark Mode)
             function showSettings(body) {
                 body.innerHTML = `
                     <div class="settings-container">
@@ -2696,7 +2451,7 @@
                 `;
             }
 
-            // Tasbih Functions
+            // Tasbih, Zakat, Video functions remain the same
             function renderTasUI(body) {
                 let progress = (currentTasMode == 'regular') ? (tasCount % 33) : (generalTasCount % 100);
                 let max = (currentTasMode == 'regular') ? 33 : 100;
@@ -2762,7 +2517,6 @@
                 });
             };
 
-            // Zakat Section
             function showZak(body) {
                 body.innerHTML = `
                     <div class="zakat-section">
@@ -2786,7 +2540,6 @@
                 document.getElementById('zakRes').innerText = Math.floor(v * 0.025).toLocaleString('bn-BD') + ' টাকা'; 
             };
 
-            // Video Section
             function showVid(body) {
                 body.innerHTML = `
                     <div class="video-section">
